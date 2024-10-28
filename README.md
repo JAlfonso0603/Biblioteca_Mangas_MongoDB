@@ -1,0 +1,3 @@
+-- No se han agregado los id's propios de cada colección. De momento solo se están utilizando los que son propios de MongoDB
+-- La inserción de registros queda pendiente hasta la siguiente clase de Taller Base de Datos.
+-- Las tablas de detalle no están desarrolladas hasta que se profundice en el uso de id's definidas por el usuario.
