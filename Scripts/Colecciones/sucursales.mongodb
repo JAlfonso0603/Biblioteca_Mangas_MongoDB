@@ -1,0 +1,27 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear colección
+db.createCollection('sucursales', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Objeto que contiene la información de sucursales específicas de la Biblioteca.",
+            required: [''],
+            properties: {
+                nombreSuc: {
+                    bsonType: 'string',
+                    description: 'Nombre de la sucursal. Puede incluir un identificativo de zona.'
+                },
+                direccionSuc: {
+                    bsonType: 'string',
+                    description: 'Dirección física de la sucursal especificada.'
+                },
+                telefonoSuc: {
+                    bsonType: 'string',
+                    description: 'Teléfono de atención a clientes de la sucursal especificada.'
+                }
+            }
+        }
+    }
+})

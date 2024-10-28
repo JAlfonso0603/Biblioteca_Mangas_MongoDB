@@ -1,0 +1,27 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear colección
+db.createCollection('usuarios', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Objeto con la información de un género específico de manga.",
+            required: ['user', 'password'],
+            properties: {
+                nombreGenero: {
+                    bsonType: 'string',
+                    description: 'Nombre del género.'
+                },
+                descGenero: {
+                    bsonType: 'string',
+                    description: 'Breve descripción del género.'
+                },
+                habilitado: {
+                    bsonType: 'boolean',
+                    description: 'Estipula si el género está disponible para búsqueda o no.'
+                }
+            }
+        }
+    }
+})

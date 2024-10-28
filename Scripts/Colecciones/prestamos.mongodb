@@ -1,0 +1,35 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear colección
+db.createCollection('prestamos', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Objeto con la información de un préstamo específico.",
+            required: [''],
+            properties: {
+                totalMangas: {
+                    bsonType: 'int',
+                    description: 'Cantidad de mangas prestados por movimiento.'
+                },
+                fechaPrestamo: {
+                    bsonType: 'date',
+                    description: 'Fecha en la que es realizado el préstamo.'
+                },
+                fechaDevolucionSR: {
+                    bsonType: 'date',
+                    description: 'Fecha estimada de devolución para evitar multas.'
+                },
+                fechaDevolucion: {
+                    bsonType: 'date',
+                    description: 'Nombre de usuario del cliente'
+                },
+                estado: {
+                    bsonType: 'string',
+                    description: 'Estipula si la solicitud de préstamo fue Aceptada o Denegada en función de las multas.'
+                }
+            }
+        }
+    }
+})
