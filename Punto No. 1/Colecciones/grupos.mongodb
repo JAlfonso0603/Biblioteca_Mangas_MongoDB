@@ -1,0 +1,23 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear colección
+db.createCollection('grupos', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Objeto que identifica los grupos disponibles para los usuarios del sistema.",
+            required: [''],
+            properties: {
+                nombreGrupo: {
+                    bsonType: 'string',
+                    description: 'Nombre del grupo'
+                },
+                habilitado: {
+                    bsonType: 'boolean',
+                    description: 'Indica si el grupo está habilitado o no.'
+                }
+            }
+        }
+    }
+})

@@ -1,0 +1,19 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear colección
+db.createCollection('permisos', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Objeto que maneja los permisos de un usuario.",
+            required: [''],
+            properties: {
+                nombre: {
+                    bsonType: 'string',
+                    description: 'Nombre de pila del cliente'
+                }
+            }
+        }
+    }
+})
