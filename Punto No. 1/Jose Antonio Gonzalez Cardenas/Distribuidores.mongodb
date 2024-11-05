@@ -1,0 +1,44 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear la colección Distribuidores
+db.createCollection('Distribuidores', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Validacion del objeto de Distribuidores",
+            required: ['idDistribuidor', 'nombreDistribuidor', 'telefonoDist', 'emailDist', 'direccion'],
+            properties: {
+                idDistribuidor: { bsonType: 'string'},
+                nombreDistribuidor: {bsonType: 'string'},
+                telefonoDist: {
+                    bsonType: 'string',
+                    pattern: '^(\\d{3} \\d{3} \\d{4})$',
+                    uniqueItems: true
+                },
+                emailDist: {
+                    bsonType: 'string',
+                    pattern: "[A-Za-z\\d.-]{1,}[@][A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
+                },
+                direccion: {bsonType: 'string',}
+            }
+        }
+    }
+})
+
+
+// No permite deplicados
+db.Distribuidores.createIndex(
+    {idDistribuidor: 1},
+    {unique: true}
+)
+
+db.Distribuidores.createIndex(
+    {telefonoDist: 1},
+    {unique: true}
+)
+
+db.Distribuidores.createIndex(
+    {emailDist: 1},
+    {unique: true}
+)

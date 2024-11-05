@@ -1,0 +1,52 @@
+// Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+// Crear la colección Sucursales
+db.createCollection('Sucursales', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Sucursales',
+            required: ['idSucursal', 'idUbicacion', 'idDistribuidor', 'nombreSuc', 'direccionSuc', 'telefonoSuc'],
+            properties: {
+                idSucursal: {bsonType: 'int',},
+                idUbicacion: {bsonType: 'int',},
+                idDistribuidor: {bsonType: 'int',},
+                nombreSuc: {
+                    bsonType: 'string',
+                    maxLength: 30
+                },
+                direccionSuc: {
+                    bsonType: 'string',
+                    maxLength: 50
+                },
+                telefonoSuc: {
+                    bsonType: 'string',
+                    pattern: '^(\\d{3} \\d{3} \\d{4})$'
+                }
+            }
+        }
+    }
+});
+
+
+// No permite deplicados
+db.Sucursales.createIndex(
+    {idSucursal: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {idUbicacion: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {idDistribuidor: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {telefonoSuc: 1},
+    {unique: true}
+)

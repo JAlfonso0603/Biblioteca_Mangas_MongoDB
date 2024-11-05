@@ -1,0 +1,36 @@
+// Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+// Crear la colección DetalleLotes
+db.createCollection('DetalleLotes', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección DetalleLotes',
+            required: ['idDetalleLote', 'idDistribuidor', 'idLote'],
+            properties: {
+                idDetalleLote: {bsonType: 'int'},
+                idDistribuidor: {bsonType: 'int'},
+                idLote: {bsonType: 'int'}
+            }
+        }
+    }
+});
+
+// No permite deplicados
+db.DetalleLotes.createIndex(
+    {idDetalleLote: 1},
+    {unique: true}
+)
+
+// No permite deplicados
+db.DetalleLotes.createIndex(
+    { idDistribuidor: 1},
+    {unique: true}
+)
+
+// No permite deplicados
+db.DetalleLotes.createIndex(
+    {idLote: 1},
+    {unique: true}
+)

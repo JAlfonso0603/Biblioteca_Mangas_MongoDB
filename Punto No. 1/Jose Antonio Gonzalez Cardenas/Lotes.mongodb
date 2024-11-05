@@ -1,0 +1,25 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear colección
+db.createCollection('Lotes', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Validacion del objeto de Lotes",
+            required: ['idLote', 'fechaImpresion', 'cantidadMangas'],
+            properties: {
+                idLote: {bsonType: 'int'},
+                fechaImpresion: {bsonType: 'date'},
+                cantidadMangas: {bsonType: 'int'}
+            }
+        }
+    }
+})
+
+
+// No permite deplicados
+db.Lotes.createIndex(
+    {idLote: 1},
+    {unique: true}
+)

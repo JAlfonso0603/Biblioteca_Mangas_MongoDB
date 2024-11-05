@@ -1,0 +1,38 @@
+// Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+// Crear la colección UbicacionFisica
+db.createCollection('UbicacionFisica', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección UbicacionFisica',
+            required: ['idUbicacion','idSucursal', 'seccion', 'pasillo', 'estanteria'],
+            properties: {
+                idUbicacion: {bsonType: 'int'},
+                idSucursal: {bsonType: 'int'},
+                seccion: {
+                    bsonType: 'string',
+                    maxLength: 10
+                },
+                pasillo: {
+                    bsonType: 'string',
+                    maxLength: 5
+                },
+                estanteria: {bsonType: 'int'}
+            }
+        }
+    }
+});
+
+
+// No permite deplicados
+db.UbicacionFisica.createIndex(
+    {idUbicacion: 1},
+    {unique: true}
+)
+
+db.UbicacionFisica.createIndex(
+    {idSucursal: 1},
+    {unique: true}
+)

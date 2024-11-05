@@ -1,0 +1,53 @@
+//Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+//Crear el esquema la validacion de Imprentas
+db.createCollection('Imprentas', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validacion del objeto de Imprentas',
+            required: ['idImprentas', 'nombreImp', 'direccionImp', 'CP_Imp', 'paisImp', 'telefonoImp', 'emailImp'],
+            properties: {
+                idImprentas: { bsonType: 'int' },
+                nombreImp: { 
+                    bsonType: 'string',
+                    maxLength: 30
+                },
+                direccionImp: { bsonType: 'string' },
+                CP_Imp: {
+                    bsonType: 'string',
+                    maxLength: 5
+                },
+                paisImp: { bsonType: 'string' },
+                telefonoImp: {
+                    bsonType: 'string',
+                    pattern: '^(\\d{3} \\d{3} \\d{4})$',
+                    uniqueItems: true
+                },
+                emailImp: {
+                    bsonType: 'string',
+                    pattern: "[A-Za-z\\d.-]{1,}[@][A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
+                },
+            }
+        }
+    }
+});
+
+
+// Tips: 
+// No permite deplicados
+db.Imprentas.createIndex(
+    {idImprenta: 1},
+    {unique: true}
+)
+
+db.Imprentas.createIndex(
+    {telefonoImp: 1},
+    {unique: true}
+)
+
+db.Imprentas.createIndex(
+    {emailImp: 1},
+    {unique: true}
+)
