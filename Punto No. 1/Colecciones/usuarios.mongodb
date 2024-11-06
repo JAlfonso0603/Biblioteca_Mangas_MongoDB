@@ -7,20 +7,32 @@ db.createCollection('usuarios', {
         $jsonSchema: {
             bsonType: 'object',
             title: "Objeto de Usuarios de la Biblioteca de Mangas",
-            required: ['user', 'password'],
+            required: ['idUsuario','user', 'password', 'nombre','habilitado'],
             properties: {
+                idUsuario: {
+                    bsonType: 'int',
+                    description: 'ID del usuario'
+                },
                 nombre: {
-                    bsonType: 'string',
-                    description: 'Nombre de pila del cliente'
+                    bsonType: 'object',
+                    description: 'Nombre completo del usuario',
+                    required: ['nombrePila', 'apePat','apeMat'],
+                    properties: {
+                        nombrePila: {
+                            bsonType: 'string',
+                            description: 'Nombre de pila del usuario'
+                        },
+                        apePat: {
+                            bsonType: 'string',
+                            description: 'Apellido paterno del cliente'
+                        },
+                        apeMat: {
+                            bsonType: 'string',
+                            description: 'Apellido materno del cliente'
+                        }
+                    }
                 },
-                apePat: {
-                    bsonType: 'string',
-                    description: 'Apellido paterno del cliente'
-                },
-                apeMat: {
-                    bsonType: 'string',
-                    description: 'Apellido materno del cliente'
-                },
+                
                 user: {
                     bsonType: 'string',
                     description: 'Nombre de usuario del cliente'

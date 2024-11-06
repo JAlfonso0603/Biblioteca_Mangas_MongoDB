@@ -7,8 +7,12 @@ db.createCollection('artistas', {
         $jsonSchema: {
             bsonType: 'object',
             title: "Objeto con la información de los artistas de un manga.",
-            required: [''],
+            required: ['idArtista','nombreArt','numObras'],
             properties: {
+                idArtista: {
+                    bsonType: 'int',
+                    description: 'ID del Artista.'
+                },
                 nombreArt: {
                     bsonType: 'string',
                     description: 'Nombre completo del artista.'

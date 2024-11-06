@@ -7,8 +7,12 @@ db.createCollection('traductores', {
         $jsonSchema: {
             bsonType: 'object',
             title: "Objeto con la información propia de los traductores involucrados.",
-            required: [''],
+            required: ['idTraductor', 'nombreTraductor', 'idiomas'],
             properties: {
+                idTraductor: {
+                    bsonType: 'int',
+                    description: 'ID del traductor'
+                },
                 nombreTraductor: {
                     bsonType: 'string',
                     description: 'Nombre completo del traductor involucrado.'

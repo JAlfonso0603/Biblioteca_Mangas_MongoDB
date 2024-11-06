@@ -7,8 +7,12 @@ db.createCollection('prestamos', {
         $jsonSchema: {
             bsonType: 'object',
             title: "Objeto con la información de un préstamo específico.",
-            required: [''],
+            required: ['idPrestamo','totalMangas','fechaPrestamo','fechaDevolucionSR','estado'],
             properties: {
+                idPrestamo: {
+                    bsonType: 'int',
+                    description: 'ID del prestamo'
+                },
                 totalMangas: {
                     bsonType: 'int',
                     description: 'Cantidad de mangas prestados por movimiento.'

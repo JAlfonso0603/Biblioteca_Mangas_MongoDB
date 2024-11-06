@@ -7,8 +7,12 @@ db.createCollection('grupos', {
         $jsonSchema: {
             bsonType: 'object',
             title: "Objeto que identifica los grupos disponibles para los usuarios del sistema.",
-            required: [''],
+            required: ['idGrupo','nombreGrupo','habilitado'],
             properties: {
+                idGrupo: {
+                    bsonType: 'int',
+                    description: 'ID del Grupo'
+                },
                 nombreGrupo: {
                     bsonType: 'string',
                     description: 'Nombre del grupo'

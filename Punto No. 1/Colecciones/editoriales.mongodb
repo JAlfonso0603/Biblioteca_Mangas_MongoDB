@@ -7,8 +7,12 @@ db.createCollection('editoriales', {
         $jsonSchema: {
             bsonType: 'object',
             title: "Objeto con los datos de la editorial encargada del manga.",
-            required: [''],
+            required: ['idEditorial','nombreEditorial','paisEditorial'],
             properties: {
+                idEditorial: {
+                    bsonType: 'int',
+                    description: 'ID de la editorial.'
+                },
                 nombreEditorial: {
                     bsonType: 'string',
                     description: 'Nombre de la editorial.'
