@@ -3,25 +3,32 @@ use('Biblioteca_Mangas')
 
 // Crear colección
 db.createCollection('grupos', {
-    validator:{
+    validator: {
         $jsonSchema: {
             bsonType: 'object',
-            title: "Objeto que identifica los grupos disponibles para los usuarios del sistema.",
-            required: ['idGrupo','nombreGrupo','habilitado'],
+            title: 'Validación de la colección Grupos',
+            required: ['nombreGrupo', 'habilitado'],
             properties: {
                 idGrupo: {
                     bsonType: 'int',
-                    description: 'ID del Grupo'
+                    description: 'ID del grupo'
                 },
                 nombreGrupo: {
                     bsonType: 'string',
-                    description: 'Nombre del grupo'
+                    description: 'Nombre del grupo',
+                    maxLength: 30
                 },
                 habilitado: {
-                    bsonType: 'boolean',
-                    description: 'Indica si el grupo está habilitado o no.'
+                    bsonType: 'bool',
+                    description: 'Indica si el grupo está habilitado',
+                    enum: [true, false]  // Usamos enum para restringir valores a true o false
                 }
             }
         }
     }
-})
+});
+
+db.grupos.createIndex(
+    {idGrupo: 1},
+    {unique: true}
+)

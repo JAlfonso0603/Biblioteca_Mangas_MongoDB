@@ -1,39 +1,57 @@
 // Usar la base de datos
 use('Biblioteca_Mangas')
 
-// Crear colección
+//Crear colección 
+//Prestamos
 db.createCollection('prestamos', {
-    validator:{
+    validator: {
         $jsonSchema: {
             bsonType: 'object',
-            title: "Objeto con la información de un préstamo específico.",
-            required: ['idPrestamo','totalMangas','fechaPrestamo','fechaDevolucionSR','estado'],
+            title: 'Validación de la colección Prestamos',
+            required: ['idSucursal', 'idUsuario', 'totalMangas', 'fechaPres', 'fechaDevSR', 'estadoPre'],
             properties: {
                 idPrestamo: {
                     bsonType: 'int',
-                    description: 'ID del prestamo'
+                    description: 'ID único del préstamo, equivalente a PRIMARY KEY'
+                },
+                idSucursal: {
+                    bsonType: 'int',
+                    description: 'ID de la sucursal asociada, equivalente a FOREIGN KEY',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                },
+                idUsuario: {
+                    bsonType: 'int',
+                    description: 'ID del usuario asociado, equivalente a FOREIGN KEY',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
                 },
                 totalMangas: {
                     bsonType: 'int',
-                    description: 'Cantidad de mangas prestados por movimiento.'
+                    description: 'Total de mangas prestadas, equivalente a INT NOT NULL'
                 },
-                fechaPrestamo: {
+                fechaPres: {
                     bsonType: 'date',
-                    description: 'Fecha en la que es realizado el préstamo.'
+                    description: 'Fecha del préstamo, equivalente a DATE NOT NULL'
                 },
-                fechaDevolucionSR: {
+                fechaDevSR: {
                     bsonType: 'date',
-                    description: 'Fecha estimada de devolución para evitar multas.'
+                    description: 'Fecha de devolución esperada, equivalente a DATE NOT NULL'
                 },
-                fechaDevolucion: {
+                fechaDev: {
                     bsonType: 'date',
-                    description: 'Nombre de usuario del cliente'
+                    description: 'Fecha real de devolución, equivalente a DATE NULL'
                 },
-                estado: {
+                estadoPre: {
                     bsonType: 'string',
-                    description: 'Estipula si la solicitud de préstamo fue Aceptada o Denegada en función de las multas.'
+                    description: 'Estado del préstamo, equivalente a NVARCHAR(20) NOT NULL DEFAULT \'Aceptado\'',
+                    default: 'Aceptado',
+                    maxLength: 20
                 }
             }
         }
     }
-})
+});
+
+db.prestamos.createIndex(
+    {idPrestamo: 1},
+    {unique: true}
+)

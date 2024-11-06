@@ -1,0 +1,29 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear colección
+db.createCollection('permisos', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Permisos',
+            required: ['idGrupo', 'idPermiso', 'nombrePermiso'],
+            properties: {
+                idPermiso: {
+                    bsonType: 'int',
+                },
+                idGrupo: {
+                    bsonType: 'int',
+                },
+                nombrePermiso: {
+                    bsonType: 'string',
+                }
+            }
+        }
+    }
+});
+
+db.permisos.createIndex(
+    {idPermiso: 1},
+    {unique: true}
+)
