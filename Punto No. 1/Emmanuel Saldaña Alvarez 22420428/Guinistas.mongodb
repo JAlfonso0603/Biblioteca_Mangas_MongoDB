@@ -1,0 +1,43 @@
+db.createCollection('guionistas', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Guionistas',
+            required: ['nombreGui', 'nacionalidadGui'],
+            properties: {
+                idGuionista: {
+                    bsonType: 'int',
+                    description: 'ID único del guionista, equivalente a PRIMARY KEY'
+                },
+                nombreGui: {
+                    bsonType: 'string',
+                    description: 'Nombre del guionista, equivalente a NVARCHAR(100) NOT NULL',
+                    maxLength: 100
+                },
+                fechaNac: {
+                    bsonType: 'date',
+                    description: 'Fecha de nacimiento del guionista, equivalente a DATE NULL'
+                },
+                nacionalidadGui: {
+                    bsonType: 'string',
+                    description: 'Nacionalidad del guionista, equivalente a NVARCHAR(50) NOT NULL',
+                    maxLength: 50
+                },
+                numeroObrasGui: {
+                    bsonType: 'int',
+                    description: 'Número de obras del guionista, equivalente a INT NULL'
+                }
+            }
+        }
+    }
+});
+
+db.guionistas.createIndex(
+    {idGuionista: 1},
+    {unique: true}
+)
+
+db.guionistas.createIndex(
+    {nombreGui: 1},
+    {unique: true}
+)

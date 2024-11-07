@@ -1,0 +1,35 @@
+db.createCollection('editoriales', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Editoriales',
+            required: ['nombreEdit', 'paisEdit'],
+            properties: {
+                idEditorial: {
+                    bsonType: 'int',
+                    description: 'ID único de la editorial, equivalente a PRIMARY KEY'
+                },
+                nombreEdit: {
+                    bsonType: 'string',
+                    description: 'Nombre de la editorial, equivalente a NVARCHAR(100) NOT NULL',
+                    maxLength: 100
+                },
+                paisEdit: {
+                    bsonType: 'string',
+                    description: 'País de la editorial, equivalente a NVARCHAR(50) NOT NULL',
+                    maxLength: 50
+                }
+            }
+        }
+    }
+});
+
+db.editoriales.createIndex(
+    {idEditorial: 1},
+    {unique: true}
+)
+
+db.editoriales.createIndex(
+    {nombreEdit: 1},
+    {unique: true}
+)

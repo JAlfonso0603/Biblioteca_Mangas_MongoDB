@@ -1,0 +1,43 @@
+db.createCollection('artistas', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Artistas',
+            required: ['nombreArt', 'nacionalidadArt'],
+            properties: {
+                idArtista: {
+                    bsonType: 'int',
+                    description: 'ID único del artista, equivalente a PRIMARY KEY'
+                },
+                nombreArt: {
+                    bsonType: 'string',
+                    description: 'Nombre del artista, equivalente a NVARCHAR(50) NOT NULL',
+                    maxLength: 50
+                },
+                fechaNac: {
+                    bsonType: 'date',
+                    description: 'Fecha de nacimiento del artista, equivalente a DATE NULL'
+                },
+                nacionalidadArt: {
+                    bsonType: 'string',
+                    description: 'Nacionalidad del artista, equivalente a NVARCHAR(50) NOT NULL',
+                    maxLength: 50
+                },
+                numeroObrasArt: {
+                    bsonType: 'int',
+                    description: 'Número de obras del artista, equivalente a INT NULL'
+                }
+            }
+        }
+    }
+});
+
+db.artistas.createIndex(
+    {idArtista: 1},
+    {unique: true}
+)
+
+db.artistas.createIndex(
+    {nombreArt: 1},
+    {unique: true}
+)

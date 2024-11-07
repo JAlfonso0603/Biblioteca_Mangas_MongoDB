@@ -1,0 +1,35 @@
+db.createCollection('autores', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Autores',
+            required: ['idArtista', 'idManga', 'idGuionista'],
+            properties: {
+                idAutor: {
+                    bsonType: 'int',
+                    description: 'ID único del autor, equivalente a PRIMARY KEY'
+                },
+                idArtista: {
+                    bsonType: 'int',
+                    description: 'ID del artista asociado, equivalente a FOREIGN KEY',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                },
+                idManga: {
+                    bsonType: 'int',
+                    description: 'ID del manga asociado, equivalente a FOREIGN KEY',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                },
+                idGuionista: {
+                    bsonType: 'int',
+                    description: 'ID del guionista asociado, equivalente a FOREIGN KEY',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                }
+            }
+        }
+    }
+});
+
+db.autores.createIndex(
+    {idAutor: 1},
+    {unique: true}
+)
