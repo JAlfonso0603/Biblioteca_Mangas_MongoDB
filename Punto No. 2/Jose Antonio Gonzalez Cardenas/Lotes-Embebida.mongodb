@@ -1,0 +1,60 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear la colección Lotes con Imprenta embebida
+db.createCollection('Lotes', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Validación del objeto de Lotes",
+            required: ['idLote', 'fechaImpresion', 'cantidadMangas', 'Imprenta'],
+            properties: {
+                idLote: { bsonType: 'int' },
+                fechaImpresion: { bsonType: 'date' },
+                cantidadMangas: { bsonType: 'int' },
+                Imprenta: { // La colección de Imprenta embebida
+                    bsonType: 'object',
+                    required: ['idImprentas', 'nombreImp', 'direccionImp', 'CP_Imp', 'paisImp', 'telefonoImp', 'emailImp'],
+                    properties: {
+                        idImprentas: { bsonType: 'int' },
+                        nombreImp: { bsonType: 'string', maxLength: 30 },
+                        direccionImp: { bsonType: 'string' },
+                        CP_Imp: { bsonType: 'string', maxLength: 5 },
+                        paisImp: { bsonType: 'string' },
+                        telefonoImp: {
+                            bsonType: 'string',
+                            pattern: '^(\\d{3} \\d{3} \\d{4})$',
+                            uniqueItems: true
+                        },
+                        emailImp: {
+                            bsonType: 'string',
+                            pattern: "[A-Za-z\\d.-]{1,}[@][A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
+                        }
+                    }
+                }
+            }
+        }
+    }
+});
+
+
+// No permite deplicados
+db.Lotes.createIndex(
+    {idLote: 1},
+    {unique: true}
+)
+
+db.Lotes.createIndex(
+    {idImprenta: 1},
+    {unique: true}
+)
+
+db.Lotes.createIndex(
+    {telefonoImp: 1},
+    {unique: true}
+)
+
+db.Lotes.createIndex(
+    {emailImp: 1},
+    {unique: true}
+)

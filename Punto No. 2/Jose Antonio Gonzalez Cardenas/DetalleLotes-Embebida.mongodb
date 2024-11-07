@@ -1,0 +1,65 @@
+// Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+// Crear la colección DetalleLotes con Distribuidor embebido
+db.createCollection('DetalleLotes', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección DetalleLotes',
+            required: ['idDetalleLote', 'Distribuidor', 'idLote'],
+            properties: {
+                idDetalleLote: { bsonType: 'int' },
+                Distribuidor: { // La colección de Distribuidor embebida
+                    bsonType: 'object',
+                    required: ['idDistribuidor', 'nombreDistribuidor', 'telefonoDist', 'emailDist', 'direccion'],
+                    properties: {
+                        idDistribuidor: { bsonType: 'int' },
+                        nombreDistribuidor: { bsonType: 'string' },
+                        telefonoDist: { 
+                            bsonType: 'string', 
+                            pattern: '^(\\d{3} \\d{3} \\d{4})$' 
+                        },
+                        emailDist: { 
+                            bsonType: 'string',
+                            pattern: "[A-Za-z\\d.-]{1,}[@][A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
+                        },
+                        direccion: { bsonType: 'string' }
+                    }
+                },
+                idLote: { bsonType: 'int' } // Referencia a Lotes
+            }
+        }
+    }
+});
+
+// No permite deplicados
+db.DetalleLotes.createIndex(
+    {idDetalleLote: 1},
+    {unique: true}
+)
+
+db.DetalleLotes.createIndex(
+    { idDistribuidor: 1},
+    {unique: true}
+)
+
+db.DetalleLotes.createIndex(
+    {idLote: 1},
+    {unique: true}
+)
+
+db.DetalleLotes.createIndex(
+    {idDistribuidor: 1},
+    {unique: true}
+)
+
+db.DetalleLotes.createIndex(
+    {telefonoDist: 1},
+    {unique: true}
+)
+
+db.DetalleLotes.createIndex(
+    {emailDist: 1},
+    {unique: true}
+)
