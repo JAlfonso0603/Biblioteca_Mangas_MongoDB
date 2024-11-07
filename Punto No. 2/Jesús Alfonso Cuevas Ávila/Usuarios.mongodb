@@ -1,0 +1,91 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+// Crear colección
+db.createCollection('usuarios', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            title: "Objeto de Usuarios de la Biblioteca de Mangas",
+            required: ['idUsuario','user', 'password', 'nombre','habilitado'],
+            properties: {
+                idUsuario: {
+                    bsonType: 'int',
+                    description: 'ID del usuario'
+                },
+                idGrupo: {
+                    bsonType: 'int',
+                    description: 'ID del grupo'
+                },
+                nombre: {
+                    bsonType: 'object',
+                    description: 'Nombre completo del usuario',
+                    required: ['nombrePila', 'apePat','apeMat'],
+                    properties: {
+                        nombrePila: {
+                            bsonType: 'string',
+                            description: 'Nombre de pila del usuario',
+                            maxLength: 15
+                        },
+                        apePat: {
+                            bsonType: 'string',
+                            description: 'Apellido paterno del cliente',
+                            maxLength: 15
+                        },
+                        apeMat: {
+                            bsonType: 'string',
+                            description: 'Apellido materno del cliente',
+                            maxLength: 15
+                        }
+                    }
+                },
+                // La colección Grupos es embebida dentro de usuarios dado que el grupo se consulta en conjunto
+                // con el usuario.
+                grupo: {
+                    bsonType: 'object',
+                    required: ['nombreGrupo', 'habilitado'],
+                    properties: {
+                        nombreGrupo: {
+                            bsonType: 'string',
+                            description: 'Nombre del grupo',
+                            maxLength: 15
+                        },
+                        habilitado: {
+                            bsonType: 'bool',
+                            description: 'Indica si el grupo está habilitado',
+                            enum: [true, false]  
+                        },
+                        // La colección Permisos es embebida dentro de Grupos dado que los permisos de un grupo
+                        // se consultan en conjunto con el usuario.
+                        permisos: {
+                            bsonType: 'object',
+                            required: ['idPermiso', 'nombrePermiso'],
+                            properties: {
+                                idPermiso: {
+                                    bsonType: 'int',
+                                },
+                                nombrePermiso: {
+                                    bsonType: 'string',
+                                }
+                            }
+                        }
+                    }
+                },
+                
+                user: {
+                    bsonType: 'string',
+                    description: 'Nombre de usuario del cliente',
+                    maxLength: 20
+                },
+                password: {
+                    bsonType: 'string',
+                    description: 'Contraseña del cliente',
+                    pattern: "^[A-Za-z0-9]{8,20}$"
+                },
+                habilitado: { 
+                    bsonType: 'bool'
+                }
+            }
+        }
+    }
+})

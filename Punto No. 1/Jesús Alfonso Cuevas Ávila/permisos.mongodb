@@ -7,12 +7,9 @@ db.createCollection('permisos', {
         $jsonSchema: {
             bsonType: 'object',
             title: 'Validación de la colección Permisos',
-            required: ['idGrupo', 'idPermiso', 'nombrePermiso'],
+            required: ['idPermiso', 'nombrePermiso'],
             properties: {
                 idPermiso: {
-                    bsonType: 'int',
-                },
-                idGrupo: {
                     bsonType: 'int',
                 },
                 nombrePermiso: {

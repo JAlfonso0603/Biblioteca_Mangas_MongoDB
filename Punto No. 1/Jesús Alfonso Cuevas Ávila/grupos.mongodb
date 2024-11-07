@@ -16,7 +16,7 @@ db.createCollection('grupos', {
                 nombreGrupo: {
                     bsonType: 'string',
                     description: 'Nombre del grupo',
-                    maxLength: 30
+                    maxLength: 15
                 },
                 habilitado: {
                     bsonType: 'bool',

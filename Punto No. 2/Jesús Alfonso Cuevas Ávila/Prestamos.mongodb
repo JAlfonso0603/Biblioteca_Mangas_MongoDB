@@ -1,0 +1,72 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+//Crear colección de Préstamos
+db.createCollection('prestamos', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Prestamos',
+            required: ['idSucursal', 'idPrestamo', 'idUsuario', 'totalMangas', 'fechaPres', 'fechaDevSR', 'estadoPre'],
+            properties: {
+                idPrestamo: {
+                    bsonType: 'int',
+                    description: 'ID único del préstamo'
+                },
+
+                // La colección sucursal es utilizada para evitar redundancia de datos y duplicación innecesaria en cada
+                // préstamo.
+                idSucursal: {
+                    bsonType: 'int',
+                    description: 'ID de la sucursal asociada',
+                },
+
+                // La colección usuario es referenciada porque es compartida entre múltiples entidades
+                idUsuario: {
+                    bsonType: 'int',
+                    description: 'ID del usuario asociado',
+                },
+                totalMangas: {
+                    bsonType: 'int',
+                    description: 'Total de mangas prestadas'
+                },
+                fechaPres: {
+                    bsonType: 'date',
+                    description: 'Fecha del préstamo'
+                },
+                fechaDevSR: {
+                    bsonType: 'date',
+                    description: 'Fecha de devolución esperada'
+                },
+                fechaDev: {
+                    bsonType: 'date',
+                    description: 'Fecha real de devolución'
+                },
+                estadoPre: {
+                    bsonType: 'string',
+                    description: 'Estado del préstamo',
+                    default: 'Aceptado',
+                    maxLength: 20
+                },
+
+                // La tabla detallePrestamos es embebida para poder acceder de manera rápida a la
+                // información de los mangas prestados en una sola operación.
+                detallePrestamos: {
+                    bsontyp: 'object',
+                    description: 'Tabla de detalles embebida dentro de préstamos',
+                    properties: {
+                        idDetallePrestamo: {bsonType: 'int'},
+                        // idManga funciona como un array de IDs para almacenar los identificadores 
+                        // de los Mangas prestados en una sola operación
+                        idManga: {bsonType: 'array'}
+                    }
+                }
+            }
+        }
+    }
+});
+
+db.prestamos.createIndex(
+    {idPrestamo: 1},
+    {unique: true}
+)
