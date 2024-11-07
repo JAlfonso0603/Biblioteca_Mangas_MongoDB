@@ -12,37 +12,37 @@ db.createCollection('prestamos', {
             properties: {
                 idPrestamo: {
                     bsonType: 'int',
-                    description: 'ID único del préstamo, equivalente a PRIMARY KEY'
+                    description: 'ID único del préstamo'
                 },
                 idSucursal: {
                     bsonType: 'int',
-                    description: 'ID de la sucursal asociada, equivalente a FOREIGN KEY',
+                    description: 'ID de la sucursal asociada',
                     // Validación de referencia debe manejarse en la lógica de la aplicación
                 },
                 idUsuario: {
                     bsonType: 'int',
-                    description: 'ID del usuario asociado, equivalente a FOREIGN KEY',
+                    description: 'ID del usuario asociado',
                     // Validación de referencia debe manejarse en la lógica de la aplicación
                 },
                 totalMangas: {
                     bsonType: 'int',
-                    description: 'Total de mangas prestadas, equivalente a INT NOT NULL'
+                    description: 'Total de mangas prestadas'
                 },
                 fechaPres: {
                     bsonType: 'date',
-                    description: 'Fecha del préstamo, equivalente a DATE NOT NULL'
+                    description: 'Fecha del préstamo'
                 },
                 fechaDevSR: {
                     bsonType: 'date',
-                    description: 'Fecha de devolución esperada, equivalente a DATE NOT NULL'
+                    description: 'Fecha de devolución esperada'
                 },
                 fechaDev: {
                     bsonType: 'date',
-                    description: 'Fecha real de devolución, equivalente a DATE NULL'
+                    description: 'Fecha real de devolución'
                 },
                 estadoPre: {
                     bsonType: 'string',
-                    description: 'Estado del préstamo, equivalente a NVARCHAR(20) NOT NULL DEFAULT \'Aceptado\'',
+                    description: 'Estado del préstamo',
                     default: 'Aceptado',
                     maxLength: 20
                 }

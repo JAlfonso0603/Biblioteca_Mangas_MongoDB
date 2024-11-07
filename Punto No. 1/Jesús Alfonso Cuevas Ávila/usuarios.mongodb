@@ -20,26 +20,31 @@ db.createCollection('usuarios', {
                     properties: {
                         nombrePila: {
                             bsonType: 'string',
-                            description: 'Nombre de pila del usuario'
+                            description: 'Nombre de pila del usuario',
+                            maxLength: 15
                         },
                         apePat: {
                             bsonType: 'string',
-                            description: 'Apellido paterno del cliente'
+                            description: 'Apellido paterno del cliente',
+                            maxLength: 15
                         },
                         apeMat: {
                             bsonType: 'string',
-                            description: 'Apellido materno del cliente'
+                            description: 'Apellido materno del cliente',
+                            maxLength: 15
                         }
                     }
                 },
                 
                 user: {
                     bsonType: 'string',
-                    description: 'Nombre de usuario del cliente'
+                    description: 'Nombre de usuario del cliente',
+                    maxLength: 20
                 },
                 password: {
                     bsonType: 'string',
-                    description: 'Contraseña del cliente'
+                    description: 'Contraseña del cliente',
+                    pattern: "^[A-Za-z0-9]{8,20}$"
                 },
                 habilitado: { 
                     bsonType: 'bool'

@@ -1,0 +1,38 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+//DetallePrestamos
+db.createCollection('detallePrestamos', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección DetallePrestamos',
+            required: ['idPrestamo', 'idManga', 'cantidad'],
+            properties: {
+                idDetallePrestamo: {
+                    bsonType: 'int',
+                    description: 'ID único del detalle del préstamo'
+                },
+                idPrestamo: {
+                    bsonType: 'int',
+                    description: 'ID del préstamo asociado',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                },
+                idManga: {
+                    bsonType: 'int',
+                    description: 'ID del manga asociado',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                },
+                cantidad: {
+                    bsonType: 'int',
+                    description: 'Cantidad de mangas prestadas'
+                }
+            }
+        }
+    }
+});
+
+db.detallePrestamos.createIndex(
+    {idDetallePrestamo: 1},
+    {unique: true}
+)

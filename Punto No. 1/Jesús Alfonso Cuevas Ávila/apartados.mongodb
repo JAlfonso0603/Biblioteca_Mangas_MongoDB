@@ -1,0 +1,48 @@
+// Usar la base de datos
+use('Biblioteca_Mangas')
+
+//Apartados
+db.createCollection('apartados', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Apartados',
+            required: ['idUsuario', 'idManga', 'fechaApartado', 'fechaLimite'],
+            properties: {
+                idApartado: {
+                    bsonType: 'int',
+                    description: 'ID único del apartado, equivalente a PRIMARY KEY'
+                },
+                idUsuario: {
+                    bsonType: 'int',
+                    description: 'ID del usuario asociado, equivalente a FOREIGN KEY',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                },
+                idManga: {
+                    bsonType: 'int',
+                    description: 'ID del manga asociado, equivalente a FOREIGN KEY',
+                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                },
+                fechaApartado: {
+                    bsonType: 'date',
+                    description: 'Fecha en la que se realizó el apartado, equivalente a DATE NOT NULL'
+                },
+                fechaLimite: {
+                    bsonType: 'date',
+                    description: 'Fecha límite para realizar el préstamo, equivalente a DATE NOT NULL'
+                },
+                estado: {
+                    bsonType: 'string',
+                    description: 'Estado del apartado, valor por defecto es "Pendiente"',
+                    default: 'Pendiente',
+                    maxLength: 20
+                }
+            }
+        }
+    }
+});
+
+db.apartados.createIndex(
+    {idApartado: 1},
+    {unique: true}
+)
