@@ -43,7 +43,6 @@ db.createCollection('prestamos', {
                 estadoPre: {
                     bsonType: 'string',
                     description: 'Estado del préstamo',
-                    default: 'Aceptado',
                     maxLength: 20
                 }
             }

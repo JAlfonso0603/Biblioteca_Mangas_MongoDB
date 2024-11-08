@@ -52,7 +52,7 @@ db.createCollection('prestamos', {
                 // La tabla detallePrestamos es embebida para poder acceder de manera rápida a la
                 // información de los mangas prestados en una sola operación.
                 detallePrestamos: {
-                    bsontyp: 'object',
+                    bsonType: 'object',
                     description: 'Tabla de detalles embebida dentro de préstamos',
                     properties: {
                         idDetallePrestamo: {bsonType: 'int'},
@@ -68,5 +68,25 @@ db.createCollection('prestamos', {
 
 db.prestamos.createIndex(
     {idPrestamo: 1},
+    {unique: true}
+)
+
+db.prestamos.createIndex(
+    {idSucursal: 1},
+    {unique: true}
+)
+
+db.prestamos.createIndex(
+    {idUsuario: 1},
+    {unique: true}
+)
+
+db.prestamos.createIndex(
+    {idDetallePrestamo: 1},
+    {unique: true}
+)
+
+db.prestamos.createIndex(
+    {idManga: 1},
     {unique: true}
 )

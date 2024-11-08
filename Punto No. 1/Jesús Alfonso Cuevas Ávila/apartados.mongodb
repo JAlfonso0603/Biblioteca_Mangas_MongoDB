@@ -34,7 +34,6 @@ db.createCollection('apartados', {
                 estado: {
                     bsonType: 'string',
                     description: 'Estado del apartado, valor por defecto es "Pendiente"',
-                    default: 'Pendiente',
                     maxLength: 20
                 }
             }
