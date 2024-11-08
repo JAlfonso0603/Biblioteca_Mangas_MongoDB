@@ -1,0 +1,86 @@
+use("Biblioteca_Mangas")
+
+db.apartados.insertMany(
+    [
+        {
+            "idApartado": 1,
+            "idUsuario": 1,
+            "idManga": 1,
+            "fechaApartado": "2024-11-01",
+            "fechaLimite": "2024-11-15",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 2,
+            "idUsuario": 2,
+            "idManga": 2,
+            "fechaApartado": "2024-11-02",
+            "fechaLimite": "2024-11-16",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 3,
+            "idUsuario": 3,
+            "idManga": 3,
+            "fechaApartado": "2024-11-03",
+            "fechaLimite": "2024-11-17",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 4,
+            "idUsuario": 4,
+            "idManga": 4,
+            "fechaApartado": "2024-11-04",
+            "fechaLimite": "2024-11-18",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 5,
+            "idUsuario": 5,
+            "idManga": 5,
+            "fechaApartado": "2024-11-05",
+            "fechaLimite": "2024-11-19",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 6,
+            "idUsuario": 1,
+            "idManga": 6,
+            "fechaApartado": "2024-11-06",
+            "fechaLimite": "2024-11-20",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 7,
+            "idUsuario": 2,
+            "idManga": 7,
+            "fechaApartado": "2024-11-07",
+            "fechaLimite": "2024-11-21",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 8,
+            "idUsuario": 3,
+            "idManga": 8,
+            "fechaApartado": "2024-11-08",
+            "fechaLimite": "2024-11-22",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 9,
+            "idUsuario": 4,
+            "idManga": 9,
+            "fechaApartado": "2024-11-09",
+            "fechaLimite": "2024-11-23",
+            "estado": "Pendiente"
+        },
+        {
+            "idApartado": 10,
+            "idUsuario": 5,
+            "idManga": 10,
+            "fechaApartado": "2024-11-10",
+            "fechaLimite": "2024-11-24",
+            "estado": "Pendiente"
+        }
+    ]
+)
