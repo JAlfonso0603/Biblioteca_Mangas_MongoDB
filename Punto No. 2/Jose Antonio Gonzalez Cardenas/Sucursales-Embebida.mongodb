@@ -22,7 +22,7 @@ db.createCollection('Sucursales', {
                 },
                 Distribuidor: { // La colección de Distribuidor embebida
                     bsonType: 'object',
-                    required: ['idDistribuidor', 'nombreDistribuidor', 'telefonoDist', 'emailDist', 'direccion'],
+                    required: ['idDistribuidor', 'nombreDistribuidor', 'telefonoDist', 'emailDist', 'direccionDist'],
                     properties: {
                         idDistribuidor: { bsonType: 'int' },
                         nombreDistribuidor: { bsonType: 'string' },
@@ -34,7 +34,7 @@ db.createCollection('Sucursales', {
                             bsonType: 'string',
                             pattern: "[A-Za-z\\d.-]{1,}[@][A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
                         },
-                        direccion: { bsonType: 'string' }
+                        direccionDist: { bsonType: 'string' }
                     }
                 },
                 nombreSuc: { bsonType: 'string', maxLength: 30 },
@@ -45,49 +45,33 @@ db.createCollection('Sucursales', {
     }
 });
 
-
-// No permite deplicados
+// Crear índices únicos
 db.Sucursales.createIndex(
-    {idSucursal: 1},
-    {unique: true}
-)
-
-db.Sucursales.createIndex(
-    {idUbicacion: 1},
-    {unique: true}
-)
+    { idSucursal: 1 },
+    { unique: true }
+);
 
 db.Sucursales.createIndex(
-    {idDistribuidor: 1},
-    {unique: true}
-)
+    { "UbicacionFisica.idUbicacion": 1 },
+    { unique: true }
+);
 
 db.Sucursales.createIndex(
-    {telefonoSuc: 1},
-    {unique: true}
-)
+    { "Distribuidor.idDistribuidor": 1 },
+    { unique: true }
+);
 
 db.Sucursales.createIndex(
-    {idUbicacion: 1},
-    {unique: true}
-)
+    { telefonoSuc: 1 },
+    { unique: true }
+);
 
 db.Sucursales.createIndex(
-    {idSucursal: 1},
-    {unique: true}
-)
+    { "Distribuidor.telefonoDist": 1 },
+    { unique: true }
+);
 
 db.Sucursales.createIndex(
-    {idDistribuidor: 1},
-    {unique: true}
-)
-
-db.Sucursales.createIndex(
-    {telefonoDist: 1},
-    {unique: true}
-)
-
-db.Sucursales.createIndex(
-    {emailDist: 1},
-    {unique: true}
-)
+    { "Distribuidor.emailDist": 1 },
+    { unique: true }
+);
