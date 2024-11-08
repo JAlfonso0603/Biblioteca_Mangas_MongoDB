@@ -7,65 +7,60 @@ db.createCollection('mangas', {
             properties: {
                 idManga: {
                     bsonType: 'int',
-                    description: 'ID único del manga, equivalente a PRIMARY KEY'
+                    description: 'ID del manga'
                 },
                 idGenero: {
                     bsonType: 'int',
-                    description: 'ID del género asociado, equivalente a FOREIGN KEY',
-                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                    description: 'ID del género asociado',
                 },
                 idUbicacion: {
                     bsonType: 'int',
-                    description: 'ID de la ubicación física asociada, equivalente a FOREIGN KEY',
-                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                    description: 'ID de la ubicación física asociada',
                 },
                 idEditorial: {
                     bsonType: 'int',
-                    description: 'ID de la editorial asociada, equivalente a FOREIGN KEY',
-                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                    description: 'ID de la editorial asociada',
                 },
                 idAutor: {
                     bsonType: 'int',
-                    description: 'ID del autor asociado, equivalente a FOREIGN KEY',
-                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                    description: 'ID del autor asociado',
                 },
                 idTraductor: {
                     bsonType: 'int',
-                    description: 'ID del traductor asociado, equivalente a FOREIGN KEY',
-                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                    description: 'ID del traductor asociado',
                 },
                 nombreManga: {
                     bsonType: 'string',
-                    description: 'Nombre del manga, equivalente a NVARCHAR(50) NOT NULL',
+                    description: 'Nombre del manga',
                     maxLength: 50
                 },
                 capituloManga: {
                     bsonType: 'int',
-                    description: 'Número de capítulos del manga, equivalente a INT NULL'
+                    description: 'Número de capítulos del manga'
                 },
                 paginasManga: {
                     bsonType: 'int',
-                    description: 'Número de páginas del manga, equivalente a INT NULL'
+                    description: 'Número de páginas del manga'
                 },
                 imagenManga: {
                     bsonType: 'string',
-                    description: 'URL de la imagen del manga, valor por defecto es "libro-default.jpg"',
+                    description: 'URL de la imagen del manga',
                     default: 'libro-default.jpg',
                     maxLength: 200
                 },
                 stock: {
                     bsonType: 'int',
-                    description: 'Cantidad de mangas disponibles, valor por defecto 1',
+                    description: 'Cantidad de mangas disponibles',
                     default: 1
                 },
                 habilitado: {
                     bsonType: 'bool',
-                    description: 'Estado de habilitación del manga, valor por defecto 1',
+                    description: 'Estado de habilitación del manga',
                     default: true
                 },
                 disponible: {
                     bsonType: 'int',
-                    description: 'Cantidad de mangas disponibles, valor por defecto 1',
+                    description: 'Cantidad de mangas disponibles',
                     default: 1
                 }
             }

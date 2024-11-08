@@ -1,0 +1,93 @@
+// Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+// Crear la colección Sucursales con Distribuidor embebido
+db.createCollection('Sucursales', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Sucursales',
+            required: ['idSucursal', 'UbicacionFisica', 'Distribuidor', 'nombreSuc', 'direccionSuc', 'telefonoSuc'],
+            properties: {
+                idSucursal: { bsonType: 'int' },
+                UbicacionFisica: { // La colección de UbicacionFisica embebida
+                    bsonType: 'object',
+                    required: ['idUbicacion', 'seccion', 'pasillo', 'estanteria'],
+                    properties: {
+                        idUbicacion: { bsonType: 'int' },
+                        seccion: { bsonType: 'string', maxLength: 10 },
+                        pasillo: { bsonType: 'string', maxLength: 5 },
+                        estanteria: { bsonType: 'int' }
+                    }
+                },
+                Distribuidor: { // La colección de Distribuidor embebida
+                    bsonType: 'object',
+                    required: ['idDistribuidor', 'nombreDistribuidor', 'telefonoDist', 'emailDist', 'direccion'],
+                    properties: {
+                        idDistribuidor: { bsonType: 'int' },
+                        nombreDistribuidor: { bsonType: 'string' },
+                        telefonoDist: {
+                            bsonType: 'string', 
+                            pattern: '^(\\d{3} \\d{3} \\d{4})$'
+                        },
+                        emailDist: {
+                            bsonType: 'string',
+                            pattern: "[A-Za-z\\d.-]{1,}[@][A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
+                        },
+                        direccion: { bsonType: 'string' }
+                    }
+                },
+                nombreSuc: { bsonType: 'string', maxLength: 30 },
+                direccionSuc: { bsonType: 'string', maxLength: 50 },
+                telefonoSuc: { bsonType: 'string', pattern: '^(\\d{3} \\d{3} \\d{4})$' }
+            }
+        }
+    }
+});
+
+
+// No permite deplicados
+db.Sucursales.createIndex(
+    {idSucursal: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {idUbicacion: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {idDistribuidor: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {telefonoSuc: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {idUbicacion: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {idSucursal: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {idDistribuidor: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {telefonoDist: 1},
+    {unique: true}
+)
+
+db.Sucursales.createIndex(
+    {emailDist: 1},
+    {unique: true}
+)

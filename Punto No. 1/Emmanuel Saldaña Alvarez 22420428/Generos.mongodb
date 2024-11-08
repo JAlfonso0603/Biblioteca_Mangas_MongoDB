@@ -7,22 +7,22 @@ db.createCollection('generos', {
             properties: {
                 idGenero: {
                     bsonType: 'int',
-                    description: 'ID único del género, equivalente a PRIMARY KEY'
+                    description: 'ID del género'
                 },
                 nombreGen: {
                     bsonType: 'string',
-                    description: 'Nombre del género, equivalente a NVARCHAR(50) NOT NULL',
+                    description: 'Nombre del género',
                     maxLength: 50
                 },
                 descripcionGen: {
                     bsonType: 'string',
-                    description: 'Descripción del género, equivalente a NVARCHAR(200) NULL',
+                    description: 'Descripción del género',
                     maxLength: 200
                 },
                 habilitado: {
                     bsonType: 'bool',
-                    description: 'Indica si el género está habilitado, equivalente a BIT NOT NULL DEFAULT 1',
-                    enum: [true, false]  // Usamos enum para restringir valores a true o false
+                    description: 'Indica si el género está habilitado',
+                    enum: [true, false]  // enum para restringir valores a true o false
                 }
             }
         }

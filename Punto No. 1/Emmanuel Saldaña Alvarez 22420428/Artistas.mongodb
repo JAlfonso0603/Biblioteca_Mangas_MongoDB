@@ -7,25 +7,25 @@ db.createCollection('artistas', {
             properties: {
                 idArtista: {
                     bsonType: 'int',
-                    description: 'ID único del artista, equivalente a PRIMARY KEY'
+                    description: 'ID del artista'
                 },
                 nombreArt: {
                     bsonType: 'string',
-                    description: 'Nombre del artista, equivalente a NVARCHAR(50) NOT NULL',
+                    description: 'Nombre del artista',
                     maxLength: 50
                 },
                 fechaNac: {
                     bsonType: 'date',
-                    description: 'Fecha de nacimiento del artista, equivalente a DATE NULL'
+                    description: 'Fecha de nacimiento del artista'
                 },
                 nacionalidadArt: {
                     bsonType: 'string',
-                    description: 'Nacionalidad del artista, equivalente a NVARCHAR(50) NOT NULL',
+                    description: 'Nacionalidad del artista',
                     maxLength: 50
                 },
                 numeroObrasArt: {
                     bsonType: 'int',
-                    description: 'Número de obras del artista, equivalente a INT NULL'
+                    description: 'Número de obras del artista'
                 }
             }
         }

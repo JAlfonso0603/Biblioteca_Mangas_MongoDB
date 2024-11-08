@@ -3,24 +3,25 @@ db.createCollection('traductores', {
         $jsonSchema: {
             bsonType: 'object',
             title: 'Validación de la colección Traductores',
+            //Referenciada en tabla Mangas
             required: ['idEditorial', 'nombreTrad'],
             properties: {
                 idTraductor: {
                     bsonType: 'int',
-                    description: 'ID del traductor'
+                    description: 'ID único del traductor, equivalente a PRIMARY KEY'
                 },
                 idEditorial: {
                     bsonType: 'int',
-                    description: 'ID de la editorial asociada',
+                    description: 'ID de la editorial asociada, equivalente a FOREIGN KEY'
                 },
                 nombreTrad: {
                     bsonType: 'string',
-                    description: 'Nombre del traductor',
+                    description: 'Nombre del traductor, equivalente a NVARCHAR(50) NOT NULL',
                     maxLength: 50
                 },
                 idiomas: {
                     bsonType: 'string',
-                    description: 'Idiomas que maneja el traductor',
+                    description: 'Idiomas que maneja el traductor, equivalente a NVARCHAR(100) NULL',
                     maxLength: 100
                 }
             }
@@ -30,5 +31,10 @@ db.createCollection('traductores', {
 
 db.traductores.createIndex(
     {idTraductor: 1},
+    {unique: true}
+)
+
+db.traductores.createIndex(
+    {nombreTrad: 1},
     {unique: true}
 )

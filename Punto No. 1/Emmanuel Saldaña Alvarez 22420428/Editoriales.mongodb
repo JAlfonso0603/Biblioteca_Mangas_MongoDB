@@ -7,16 +7,16 @@ db.createCollection('editoriales', {
             properties: {
                 idEditorial: {
                     bsonType: 'int',
-                    description: 'ID único de la editorial, equivalente a PRIMARY KEY'
+                    description: 'ID de la editorial'
                 },
                 nombreEdit: {
                     bsonType: 'string',
-                    description: 'Nombre de la editorial, equivalente a NVARCHAR(100) NOT NULL',
+                    description: 'Nombre de la editorial',
                     maxLength: 100
                 },
                 paisEdit: {
                     bsonType: 'string',
-                    description: 'País de la editorial, equivalente a NVARCHAR(50) NOT NULL',
+                    description: 'País de la editorial',
                     maxLength: 50
                 }
             }
