@@ -1,0 +1,169 @@
+db.createCollection('mangas', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación de la colección Mangas',
+            required: ['nombreManga', 'genero', 'editorial', 'autor', 'guionista', 'artista'],
+            properties: {
+                idManga: {
+                    bsonType: 'int',
+                    description: 'ID  del manga, '
+                },
+                 idTraductor: {
+                    bsonType: 'int',
+                    description: 'ID del traductor asociado',
+                },
+                nombreManga: {
+                    bsonType: 'string',
+                    description: 'Nombre del manga',
+                    maxLength: 50
+                },
+                capituloManga: {
+                    bsonType: 'int',
+                    description: 'Número de capítulos del manga'
+                },
+                paginasManga: {
+                    bsonType: 'int',
+                    description: 'Número de páginas del manga'
+                },
+                imagenManga: {
+                    bsonType: 'string',
+                    description: 'URL de la imagen del manga',
+                    default: 'libro-default.jpg',
+                    maxLength: 200
+                },
+                stock: {
+                    bsonType: 'int',
+                    description: 'Cantidad de mangas disponibles',
+                    default: 1
+                },
+                habilitado: {
+                    bsonType: 'bool',
+                    description: 'Estado de habilitación del manga',
+                    default: true
+                },
+                disponible: {
+                    bsonType: 'int',
+                    description: 'Cantidad de mangas disponibles',
+                    default: 1
+                },
+                //Tabla de generos embebida en Mangas 
+                genero: {
+                    bsonType: 'object',
+                    required: ['idGenero', 'nombreGen'],
+                    properties: {
+                        idGenero: {
+                            bsonType: 'int',
+                            description: 'ID único del género'
+                        },
+                        nombreGen: {
+                            bsonType: 'string',
+                            description: 'Nombre del género',
+                            maxLength: 50
+                        },
+                        descripcionGen: {
+                            bsonType: 'string',
+                            description: 'Descripción del género',
+                            maxLength: 200
+                        }
+                    }
+                },
+                //Tabla de Editorial embebida en Mangas 
+                editorial: {
+                    bsonType: 'object',
+                    required: ['idEditorial', 'nombreEdit', 'paisEdit'],
+                    properties: {
+                        idEditorial: {
+                            bsonType: 'int',
+                            description: 'ID único de la editorial'
+                        },
+                        nombreEdit: {
+                            bsonType: 'string',
+                            description: 'Nombre de la editorial',
+                            maxLength: 100
+                        },
+                        paisEdit: {
+                            bsonType: 'string',
+                            description: 'País de la editoria',
+                            maxLength: 50
+                        }
+                    }
+                },
+                //Tabla de autor embebida en Mangas 
+                autor: {
+                    bsonType: 'object',
+                    required: ['idAutor', 'idArtista', 'idGuionista'],
+                    properties: {
+                        idAutor: {
+                            bsonType: 'int',
+                            description: 'ID único del autor'
+                        },
+                        idArtista: {
+                            bsonType: 'int',
+                            description: 'ID del artista asociado'
+                        },
+                        idGuionista: {
+                            bsonType: 'int',
+                            description: 'ID del guionista asociado'
+                        }
+                    }
+                },
+                //Tabla de guionista embebida en Mangas 
+                guionista: {
+                    bsonType: 'object',
+                    required: ['idGuionista', 'nombreGui', 'nacionalidadGui'],
+                    properties: {
+                        idGuionista: {
+                            bsonType: 'int',
+                            description: 'ID único del guionista'
+                        },
+                        nombreGui: {
+                            bsonType: 'string',
+                            description: 'Nombre del guionista',
+                            maxLength: 100
+                        },
+                        nacionalidadGui: {
+                            bsonType: 'string',
+                            description: 'Nacionalidad del guionist',
+                            maxLength: 50
+                        },
+                        numeroObrasGui: {
+                            bsonType: 'int',
+                            description: 'Número de obras del guionista'
+                        }
+                    }
+                },
+                //Tabla de artista embebida en Mangas 
+                artista: {
+                    bsonType: 'object',
+                    required: ['idArtista', 'nombreArt', 'nacionalidadArt'],
+                    properties: {
+                        idArtista: {
+                            bsonType: 'int',
+                            description: 'ID único del artista'
+                        },
+                        nombreArt: {
+                            bsonType: 'string',
+                            description: 'Nombre del artista',
+                            maxLength: 50
+                        },
+                        nacionalidadArt: {
+                            bsonType: 'string',
+                            description: 'Nacionalidad del artista',
+                            maxLength: 50
+                        },
+                        numeroObrasArt: {
+                            bsonType: 'int',
+                            description: 'Número de obras del artista'
+                        }
+                    }
+                }
+            }
+        }
+    }
+});
+
+db.mangas.createIndex(
+    {idManga: 1},
+    {unique: true}
+);
