@@ -45,16 +45,16 @@ db.Lotes.createIndex(
 )
 
 db.Lotes.createIndex(
-    {idImprenta: 1},
-    {unique: true}
-)
+    { "Imprenta.idImprentas": 1 },
+    { unique: true }
+);
 
 db.Lotes.createIndex(
-    {telefonoImp: 1},
-    {unique: true}
-)
+    { "Imprenta.telefonoImp": 1 },
+    { unique: true }
+);
 
 db.Lotes.createIndex(
-    {emailImp: 1},
-    {unique: true}
-)
+    { "Imprenta.emailImp": 1 },
+    { unique: true }
+);
