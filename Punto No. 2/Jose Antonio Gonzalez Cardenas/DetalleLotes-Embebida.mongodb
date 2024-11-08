@@ -12,7 +12,7 @@ db.createCollection('DetalleLotes', {
                 idDetalleLote: { bsonType: 'int' },
                 Distribuidor: { // La colección de Distribuidor embebida
                     bsonType: 'object',
-                    required: ['idDistribuidor', 'nombreDistribuidor', 'telefonoDist', 'emailDist', 'direccion'],
+                    required: ['idDistribuidor', 'nombreDistribuidor', 'telefonoDist', 'emailDist', 'direccionDist'],
                     properties: {
                         idDistribuidor: { bsonType: 'int' },
                         nombreDistribuidor: { bsonType: 'string' },
@@ -24,7 +24,7 @@ db.createCollection('DetalleLotes', {
                             bsonType: 'string',
                             pattern: "[A-Za-z\\d.-]{1,}[@][A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
                         },
-                        direccion: { bsonType: 'string' }
+                        direccionDist: { bsonType: 'string' }
                     }
                 },
                 idLote: { bsonType: 'int' } // Referencia a Lotes
@@ -33,33 +33,24 @@ db.createCollection('DetalleLotes', {
     }
 });
 
-// No permite deplicados
+// Crear índices únicos
 db.DetalleLotes.createIndex(
-    {idDetalleLote: 1},
-    {unique: true}
-)
+    { idDetalleLote: 1 },
+    { unique: true }
+);
+
+// Crear índices en los campos embebidos
+db.DetalleLotes.createIndex(
+    { 'Distribuidor.idDistribuidor': 1 },
+    { unique: true }
+);
 
 db.DetalleLotes.createIndex(
-    { idDistribuidor: 1},
-    {unique: true}
-)
+    { 'Distribuidor.telefonoDist': 1 },
+    { unique: true }
+);
 
 db.DetalleLotes.createIndex(
-    {idLote: 1},
-    {unique: true}
-)
-
-db.DetalleLotes.createIndex(
-    {idDistribuidor: 1},
-    {unique: true}
-)
-
-db.DetalleLotes.createIndex(
-    {telefonoDist: 1},
-    {unique: true}
-)
-
-db.DetalleLotes.createIndex(
-    {emailDist: 1},
-    {unique: true}
-)
+    { 'Distribuidor.emailDist': 1 },
+    { unique: true }
+);
