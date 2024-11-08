@@ -13,6 +13,10 @@ db.createCollection('grupos', {
                     bsonType: 'int',
                     description: 'ID del grupo'
                 },
+                idPermiso: {
+                    bsonType: 'int',
+                    description: 'ID del set de permisos asociados al grupo'
+                },
                 nombreGrupo: {
                     bsonType: 'string',
                     description: 'Nombre del grupo',

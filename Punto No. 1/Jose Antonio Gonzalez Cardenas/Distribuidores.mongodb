@@ -9,7 +9,7 @@ db.createCollection('Distribuidores', {
             title: "Validacion del objeto de Distribuidores",
             required: ['idDistribuidor', 'nombreDistribuidor', 'telefonoDist', 'emailDist', 'direccion'],
             properties: {
-                idDistribuidor: { bsonType: 'string'},
+                idDistribuidor: { bsonType: 'int'},
                 nombreDistribuidor: {bsonType: 'string'},
                 telefonoDist: {
                     bsonType: 'string',
@@ -20,7 +20,7 @@ db.createCollection('Distribuidores', {
                     bsonType: 'string',
                     pattern: "[A-Za-z\\d.-]{1,}[@][A-Za-z\\d.-]{1,}[.][A-Za-z\\d.-]{1,}$"
                 },
-                direccion: {bsonType: 'string',}
+                direccionDist: {bsonType: 'string',}
             }
         }
     }

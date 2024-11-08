@@ -7,9 +7,10 @@ db.createCollection('Lotes', {
         $jsonSchema: {
             bsonType: 'object',
             title: "Validacion del objeto de Lotes",
-            required: ['idLote', 'fechaImpresion', 'cantidadMangas'],
+            required: ['idLote', 'idImprenta', 'fechaImpresion', 'cantidadMangas'],
             properties: {
                 idLote: {bsonType: 'int'},
+                idImprenta: {bsonType: 'int'},
                 fechaImpresion: {bsonType: 'date'},
                 cantidadMangas: {bsonType: 'int'}
             }
@@ -18,7 +19,7 @@ db.createCollection('Lotes', {
 })
 
 
-// No permite deplicados
+// No permite duplicados
 db.Lotes.createIndex(
     {idLote: 1},
     {unique: true}
