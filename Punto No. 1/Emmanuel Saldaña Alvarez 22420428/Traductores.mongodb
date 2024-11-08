@@ -7,21 +7,20 @@ db.createCollection('traductores', {
             properties: {
                 idTraductor: {
                     bsonType: 'int',
-                    description: 'ID único del traductor, equivalente a PRIMARY KEY'
+                    description: 'ID del traductor'
                 },
                 idEditorial: {
                     bsonType: 'int',
-                    description: 'ID de la editorial asociada, equivalente a FOREIGN KEY',
-                    // Validación de referencia debe manejarse en la lógica de la aplicación
+                    description: 'ID de la editorial asociada',
                 },
                 nombreTrad: {
                     bsonType: 'string',
-                    description: 'Nombre del traductor, equivalente a NVARCHAR(50) NOT NULL',
+                    description: 'Nombre del traductor',
                     maxLength: 50
                 },
                 idiomas: {
                     bsonType: 'string',
-                    description: 'Idiomas que maneja el traductor, equivalente a NVARCHAR(100) NULL',
+                    description: 'Idiomas que maneja el traductor',
                     maxLength: 100
                 }
             }
@@ -31,10 +30,5 @@ db.createCollection('traductores', {
 
 db.traductores.createIndex(
     {idTraductor: 1},
-    {unique: true}
-)
-
-db.traductores.createIndex(
-    {nombreTrad: 1},
     {unique: true}
 )
