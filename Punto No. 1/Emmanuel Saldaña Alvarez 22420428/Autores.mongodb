@@ -7,21 +7,21 @@ db.createCollection('autores', {
             properties: {
                 idAutor: {
                     bsonType: 'int',
-                    description: 'ID único del autor, equivalente a PRIMARY KEY'
+                    description: 'ID del autor'
                 },
                 idArtista: {
                     bsonType: 'int',
-                    description: 'ID del artista asociado, equivalente a FOREIGN KEY',
+                    description: 'ID del artista asociado',
                     // Validación de referencia debe manejarse en la lógica de la aplicación
                 },
                 idManga: {
                     bsonType: 'int',
-                    description: 'ID del manga asociado, equivalente a FOREIGN KEY',
+                    description: 'ID del manga asociado',
                     // Validación de referencia debe manejarse en la lógica de la aplicación
                 },
                 idGuionista: {
                     bsonType: 'int',
-                    description: 'ID del guionista asociado, equivalente a FOREIGN KEY',
+                    description: 'ID del guionista asociado',
                     // Validación de referencia debe manejarse en la lógica de la aplicación
                 }
             }
