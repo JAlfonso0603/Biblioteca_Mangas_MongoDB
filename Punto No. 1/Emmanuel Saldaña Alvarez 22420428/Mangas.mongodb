@@ -51,17 +51,14 @@ db.createCollection('mangas', {
                 stock: {
                     bsonType: 'int',
                     description: 'Cantidad de mangas disponibles',
-                    default: 1
                 },
                 habilitado: {
                     bsonType: 'bool',
                     description: 'Estado de habilitación del manga',
-                    default: true
                 },
                 disponible: {
                     bsonType: 'int',
                     description: 'Cantidad de mangas disponibles',
-                    default: 1
                 }
             }
         }

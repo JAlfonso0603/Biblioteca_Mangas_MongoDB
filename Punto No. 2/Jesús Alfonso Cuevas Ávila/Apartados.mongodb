@@ -47,3 +47,13 @@ db.apartados.createIndex(
     {idApartado: 1},
     {unique: true}
 )
+
+db.apartados.createIndex(
+    {idUsuario: 1},
+    {unique: true}
+)
+
+db.apartados.createIndex(
+    {idManga: 1},
+    {unique: true}
+)
