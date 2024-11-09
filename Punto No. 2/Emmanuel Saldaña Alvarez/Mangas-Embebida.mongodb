@@ -114,14 +114,14 @@ db.createCollection('mangas', {
                             description: 'Nombre del guionista',
                             maxLength: 100
                         },
-                        nacionalidadGui: {
-                            bsonType: 'string',
-                            description: 'Nacionalidad del guionist',
-                            maxLength: 50
-                        },
                         numeroObrasGui: {
                             bsonType: 'int',
                             description: 'Número de obras del guionista'
+                        },
+                         nacionalidadGui: {
+                            bsonType: 'string',
+                            description: 'Nacionalidad del guionist',
+                            maxLength: 50
                         }
                     }
                 },
@@ -139,15 +139,16 @@ db.createCollection('mangas', {
                             description: 'Nombre del artista',
                             maxLength: 50
                         },
+                        numeroObrasArt: {
+                            bsonType: 'int',
+                            description: 'Número de obras del artista'
+                        },
                         nacionalidadArt: {
                             bsonType: 'string',
                             description: 'Nacionalidad del artista',
                             maxLength: 50
-                        },
-                        numeroObrasArt: {
-                            bsonType: 'int',
-                            description: 'Número de obras del artista'
                         }
+                        
                     }
                 }
             }
