@@ -1,0 +1,147 @@
+// Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+db.Lotes.insertMany(
+    [
+        {
+            "idLote": 1,
+            "fechaImpresion": "2024-01-01",
+            "cantidadMangas": 100,
+            "Imprenta": {
+                "idImprenta": 1,
+                "nombreImp": "Imprenta A",
+                "direccionImp": "Calle 1, Colonia Centro",
+                "CP_Imp": "12345",
+                "paisImp": "México",
+                "telefonoImp": "555-0101",
+                "emailImp": "contacto@imprentaA.com"
+            }
+        },
+        {
+            "idLote": 2,
+            "fechaImpresion": "2024-01-02",
+            "cantidadMangas": 150,
+            "Imprenta": {
+                "idImprenta": 2,
+                "nombreImp": "Imprenta B",
+                "direccionImp": "Avenida 2, Colonia Jardines",
+                "CP_Imp": "23456",
+                "paisImp": "México",
+                "telefonoImp": "555-0202",
+                "emailImp": "contacto@imprentaB.com"
+            }
+        },
+        {
+            "idLote": 3,
+            "fechaImpresion": "2024-01-03",
+            "cantidadMangas": 200,
+            "Imprenta": {
+                "idImprenta": 3,
+                "nombreImp": "Imprenta C",
+                "direccionImp": "Boulevard 3, Colonia Industrial",
+                "CP_Imp": "34567",
+                "paisImp": "México",
+                "telefonoImp": "555-0303",
+                "emailImp": "contacto@imprentaC.com"
+            }
+        },
+        {
+            "idLote": 4,
+            "fechaImpresion": "2024-01-04",
+            "cantidadMangas": 250,
+            "Imprenta": {
+                "idImprenta": 4,
+                "nombreImp": "Imprenta D",
+                "direccionImp": "Calle 4, Colonia Roma",
+                "CP_Imp": "45678",
+                "paisImp": "México",
+                "telefonoImp": "555-0404",
+                "emailImp": "contacto@imprentaD.com"
+            }
+        },
+        {
+            "idLote": 5,
+            "fechaImpresion": "2024-01-05",
+            "cantidadMangas": 300,
+            "Imprenta": {
+                "idImprenta": 5,
+                "nombreImp": "Imprenta E",
+                "direccionImp": "Avenida 5, Colonia Polanco",
+                "CP_Imp": "56789",
+                "paisImp": "México",
+                "telefonoImp": "555-0505",
+                "emailImp": "contacto@imprentaE.com"
+            }
+        },
+        {
+            "idLote": 6,
+            "fechaImpresion": "2024-01-06",
+            "cantidadMangas": 350,
+            "Imprenta": {
+                "idImprenta": 6,
+                "nombreImp": "Imprenta F",
+                "direccionImp": "Calle 6, Colonia Del Valle",
+                "CP_Imp": "67890",
+                "paisImp": "México",
+                "telefonoImp": "555-0606",
+                "emailImp": "contacto@imprentaF.com"
+            }
+        },
+        {
+            "idLote": 7,
+            "fechaImpresion": "2024-01-07",
+            "cantidadMangas": 400,
+            "Imprenta": {
+                "idImprenta": 7,
+                "nombreImp": "Imprenta G",
+                "direccionImp": "Avenida 7, Colonia Santa Fe",
+                "CP_Imp": "78901",
+                "paisImp": "México",
+                "telefonoImp": "555-0707",
+                "emailImp": "contacto@imprentaG.com"
+            }
+        },
+        {
+            "idLote": 8,
+            "fechaImpresion": "2024-01-08",
+            "cantidadMangas": 450,
+            "Imprenta": {
+                "idImprenta": 8,
+                "nombreImp": "Imprenta H",
+                "direccionImp": "Boulevard 8, Colonia Tlalpan",
+                "CP_Imp": "89012",
+                "paisImp": "México",
+                "telefonoImp": "555-0808",
+                "emailImp": "contacto@imprentaH.com"
+            }
+        },
+        {
+            "idLote": 9,
+            "fechaImpresion": "2024-01-09",
+            "cantidadMangas": 500,
+            "Imprenta": {
+                "idImprenta": 9,
+                "nombreImp": "Imprenta I",
+                "direccionImp": "Calle 9, Colonia Cuauhtémoc",
+                "CP_Imp": "90123",
+                "paisImp": "México",
+                "telefonoImp": "555-0909",
+                "emailImp": "contacto@imprentaI.com"
+            }
+        },
+        {
+            "idLote": 10,
+            "fechaImpresion": "2024-01-10",
+            "cantidadMangas": 550,
+            "Imprenta": {
+                "idImprenta": 10,
+                "nombreImp": "Imprenta J",
+                "direccionImp": "Avenida 10, Colonia Iztapalapa",
+                "CP_Imp": "01234",
+                "paisImp": "México",
+                "telefonoImp": "555-1010",
+                "emailImp": "contacto@imprentaJ.com"
+            }
+        }
+    ]
+)

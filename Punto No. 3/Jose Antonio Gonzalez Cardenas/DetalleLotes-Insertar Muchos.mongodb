@@ -1,0 +1,117 @@
+// Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+db.DetalleLotes.insertMany(
+    [
+        {
+            "idDetalleLote": 1,
+            "Distribuidor": {
+                "idDistribuidor": 1,
+                "nombreDistribuidor": "Distribuidor 1",
+                "telefonoDist": "555 111 1555",
+                "emailDist": "distribuidor1@correo.com",
+                "direccionDist": "Calle 1, Colonia Centro"
+            },
+            "idLote": 1
+        },
+        {
+            "idDetalleLote": 2,
+            "Distribuidor": {
+                "idDistribuidor": 2,
+                "nombreDistribuidor": "Distribuidor 2",
+                "telefonoDist": "555 222 2555",
+                "emailDist": "distribuidor2@correo.com",
+                "direccionDist": "Avenida 2, Colonia Jardines"
+            },
+            "idLote": 2
+        },
+        {
+            "idDetalleLote": 3,
+            "Distribuidor": {
+                "idDistribuidor": 3,
+                "nombreDistribuidor": "Distribuidor 3",
+                "telefonoDist": "555 333 3555",
+                "emailDist": "distribuidor3@correo.com",
+                "direccionDist": "Boulevard 3, Colonia Industrial"
+            },
+            "idLote": 3
+        },
+        {
+            "idDetalleLote": 4,
+            "Distribuidor": {
+                "idDistribuidor": 4,
+                "nombreDistribuidor": "Distribuidor 4",
+                "telefonoDist": "555 444 4555",
+                "emailDist": "distribuidor4@correo.com",
+                "direccionDist": "Calle 4, Colonia Roma"
+            },
+            "idLote": 4
+        },
+        {
+            "idDetalleLote": 5,
+            "Distribuidor": {
+                "idDistribuidor": 5,
+                "nombreDistribuidor": "Distribuidor 5",
+                "telefonoDist": "555 555 5555",
+                "emailDist": "distribuidor5@correo.com",
+                "direccionDist": "Avenida 5, Colonia Polanco"
+            },
+            "idLote": 5
+        },
+        {
+            "idDetalleLote": 6,
+            "Distribuidor": {
+                "idDistribuidor": 6,
+                "nombreDistribuidor": "Distribuidor 6",
+                "telefonoDist": "555 666 6555",
+                "emailDist": "distribuidor6@correo.com",
+                "direccionDist": "Calle 6, Colonia Del Valle"
+            },
+            "idLote": 6
+        },
+        {
+            "idDetalleLote": 7,
+            "Distribuidor": {
+                "idDistribuidor": 7,
+                "nombreDistribuidor": "Distribuidor 7",
+                "telefonoDist": "555 777 7555",
+                "emailDist": "distribuidor7@correo.com",
+                "direccionDist": "Avenida 7, Colonia Santa Fe"
+            },
+            "idLote": 7
+        },
+        {
+            "idDetalleLote": 8,
+            "Distribuidor": {
+                "idDistribuidor": 8,
+                "nombreDistribuidor": "Distribuidor 8",
+                "telefonoDist": "555 888 8555",
+                "emailDist": "distribuidor8@correo.com",
+                "direccionDist": "Boulevard 8, Colonia Tlalpan"
+            },
+            "idLote": 8
+        },
+        {
+            "idDetalleLote": 9,
+            "Distribuidor": {
+                "idDistribuidor": 9,
+                "nombreDistribuidor": "Distribuidor 9",
+                "telefonoDist": "555 999 9555",
+                "emailDist": "distribuidor9@correo.com",
+                "direccionDist": "Calle 9, Colonia Cuauhtémoc"
+            },
+            "idLote": 9
+        },
+        {
+            "idDetalleLote": 10,
+            "Distribuidor": {
+                "idDistribuidor": 10,
+                "nombreDistribuidor": "Distribuidor 10",
+                "telefonoDist": "555 000 0555",
+                "emailDist": "distribuidor10@correo.com",
+                "direccionDist": "Avenida 10, Colonia Iztapalapa"
+            },
+            "idLote": 10
+        }
+    ]
+)

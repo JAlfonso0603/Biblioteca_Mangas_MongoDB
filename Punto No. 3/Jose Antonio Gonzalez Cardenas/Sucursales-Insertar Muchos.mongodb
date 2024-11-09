@@ -1,0 +1,197 @@
+// Usar la Base de Datos
+use("Biblioteca-Mangas")
+
+db.Sucursales.insertMany(
+    [
+        {
+            "idSucursal": 1,
+            "nombreSuc": "Sucursal A",
+            "direccionSuc": "Calle 1, Colonia Centro",
+            "telefonoSuc": "555 111 1555",
+            "UbicacionFisica": {
+                "idUbicacion": 1,
+                "seccion": "A",
+                "pasillo": "1",
+                "estanteria": 1
+            },
+            "Distribuidor": {
+                "idDistribuidor": 1,
+                "nombreDistribuidor": "Distribuidor 1",
+                "telefonoDist": "555 111 1555",
+                "emailDist": "distribuidor1@correo.com",
+                "direccionDist": "Calle 1, Colonia Centro"
+            }
+        },
+        {
+            "idSucursal": 2,
+            "nombreSuc": "Sucursal B",
+            "direccionSuc": "Avenida 2, Colonia Jardines",
+            "telefonoSuc": "555 222 2555",
+            "UbicacionFisica": {
+                "idUbicacion": 2,
+                "seccion": "A",
+                "pasillo": "1",
+                "estanteria": 2
+            },
+            "Distribuidor": {
+                "idDistribuidor": 2,
+                "nombreDistribuidor": "Distribuidor 2",
+                "telefonoDist": "555 222 2555",
+                "emailDist": "distribuidor2@correo.com",
+                "direccionDist": "Avenida 2, Colonia Jardines"
+            }
+        },
+        {
+            "idSucursal": 3,
+            "nombreSuc": "Sucursal C",
+            "direccionSuc": "Boulevard 3, Colonia Industrial",
+            "telefonoSuc": "555 333 3555",
+            "UbicacionFisica": {
+                "idUbicacion": 3,
+                "seccion": "B",
+                "pasillo": "2",
+                "estanteria": 1
+            },
+            "Distribuidor": {
+                "idDistribuidor": 3,
+                "nombreDistribuidor": "Distribuidor 3",
+                "telefonoDist": "555 333 3555",
+                "emailDist": "distribuidor3@correo.com",
+                "direccionDist": "Boulevard 3, Colonia Industrial"
+            }
+        },
+        {
+            "idSucursal": 4,
+            "nombreSuc": "Sucursal D",
+            "direccionSuc": "Calle 4, Colonia Roma",
+            "telefonoSuc": "555 444 4555",
+            "UbicacionFisica": {
+                "idUbicacion": 4,
+                "seccion": "B",
+                "pasillo": "2",
+                "estanteria": 2
+            },
+            "Distribuidor": {
+                "idDistribuidor": 4,
+                "nombreDistribuidor": "Distribuidor 4",
+                "telefonoDist": "555 444 4555",
+                "emailDist": "distribuidor4@correo.com",
+                "direccionDist": "Calle 4, Colonia Roma"
+            }
+        },
+        {
+            "idSucursal": 5,
+            "nombreSuc": "Sucursal E",
+            "direccionSuc": "Avenida 5, Colonia Polanco",
+            "telefonoSuc": "555 555 5555",
+            "UbicacionFisica": {
+                "idUbicacion": 5,
+                "seccion": "C",
+                "pasillo": "3",
+                "estanteria": 1
+            },
+            "Distribuidor": {
+                "idDistribuidor": 5,
+                "nombreDistribuidor": "Distribuidor 5",
+                "telefonoDist": "555 555 5555",
+                "emailDist": "distribuidor5@correo.com",
+                "direccionDist": "Avenida 5, Colonia Polanco"
+            }
+        },
+        {
+            "idSucursal": 6,
+            "nombreSuc": "Sucursal F",
+            "direccionSuc": "Calle 6, Colonia Del Valle",
+            "telefonoSuc": "555 666 6555",
+            "UbicacionFisica": {
+                "idUbicacion": 6,
+                "seccion": "C",
+                "pasillo": "3",
+                "estanteria": 2
+            },
+            "Distribuidor": {
+                "idDistribuidor": 6,
+                "nombreDistribuidor": "Distribuidor 6",
+                "telefonoDist": "555 666 6555",
+                "emailDist": "distribuidor6@correo.com",
+                "direccionDist": "Calle 6, Colonia Del Valle"
+            }
+        },
+        {
+            "idSucursal": 7,
+            "nombreSuc": "Sucursal G",
+            "direccionSuc": "Avenida 7, Colonia Santa Fe",
+            "telefonoSuc": "555 777 7555",
+            "UbicacionFisica": {
+                "idUbicacion": 7,
+                "seccion": "D",
+                "pasillo": "4",
+                "estanteria": 1
+            },
+            "Distribuidor": {
+                "idDistribuidor": 7,
+                "nombreDistribuidor": "Distribuidor 7",
+                "telefonoDist": "555 777 7555",
+                "emailDist": "distribuidor7@correo.com",
+                "direccionDist": "Avenida 7, Colonia Santa Fe"
+            }
+        },
+        {
+            "idSucursal": 8,
+            "nombreSuc": "Sucursal H",
+            "direccionSuc": "Boulevard 8, Colonia Tlalpan",
+            "telefonoSuc": "555 888 8555",
+            "UbicacionFisica": {
+                "idUbicacion": 8,
+                "seccion": "D",
+                "pasillo": "4",
+                "estanteria": 2
+            },
+            "Distribuidor": {
+                "idDistribuidor": 8,
+                "nombreDistribuidor": "Distribuidor 8",
+                "telefonoDist": "555 888 8555",
+                "emailDist": "distribuidor8@correo.com",
+                "direccionDist": "Boulevard 8, Colonia Tlalpan"
+            }
+        },
+        {
+            "idSucursal": 9,
+            "nombreSuc": "Sucursal I",
+            "direccionSuc": "Calle 9, Colonia Cuauhtémoc",
+            "telefonoSuc": "555 999 9555",
+            "UbicacionFisica": {
+                "idUbicacion": 9,
+                "seccion": "E",
+                "pasillo": "5",
+                "estanteria": 1
+            },
+            "Distribuidor": {
+                "idDistribuidor": 9,
+                "nombreDistribuidor": "Distribuidor 9",
+                "telefonoDist": "555 999 9555",
+                "emailDist": "distribuidor9@correo.com",
+                "direccionDist": "Calle 9, Colonia Cuauhtémoc"
+            }
+        },
+        {
+            "idSucursal": 10,
+            "nombreSuc": "Sucursal J",
+            "direccionSuc": "Avenida 10, Colonia Iztapalapa",
+            "telefonoSuc": "555 000 0555",
+            "UbicacionFisica": {
+                "idUbicacion": 10,
+                "seccion": "E",
+                "pasillo": "5",
+                "estanteria": 2
+            },
+            "Distribuidor": {
+                "idDistribuidor": 10,
+                "nombreDistribuidor": "Distribuidor 10",
+                "telefonoDist": "555 000 0555",
+                "emailDist": "distribuidor10@correo.com",
+                "direccionDist": "Avenida 10, Colonia Iztapalapa"
+            }
+        }
+    ]
+)
