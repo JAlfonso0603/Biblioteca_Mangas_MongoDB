@@ -1,0 +1,182 @@
+[
+    {
+        "idPrestamo": 1,
+        "idSucursal": 1,
+        "idUsuario": 1,
+        "totalMangas": 5,
+        "fechaPres": "2024-11-01",
+        "fechaDevSR": "2024-11-15",
+        "estadoPre": "Aceptado",
+        "detallePrestamos": [
+            {
+                "idDetallePrestamo": 1,
+                "idManga": [
+                    {
+                        "idManga": 1
+                    }
+                ]
+            },
+            {
+                "idDetallePrestamo": 2,
+                "idManga": [
+                    {
+                        "idManga": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idPrestamo": 2,
+        "idSucursal": 2,
+        "idUsuario": 2,
+        "totalMangas": 3,
+        "fechaPres": "2024-11-02",
+        "fechaDevSR": "2024-11-16",
+        "estadoPre": "Aceptado",
+        "detallePrestamos": [
+            {
+                "idDetallePrestamo": 3,
+                "idManga": [
+                    {
+                        "idManga": 3
+                    }
+                ]
+            },
+            {
+                "idDetallePrestamo": 4,
+                "idManga": [
+                    {
+                        "idManga": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idPrestamo": 3,
+        "idSucursal": 3,
+        "idUsuario": 3,
+        "totalMangas": 7,
+        "fechaPres": "2024-11-03",
+        "fechaDevSR": "2024-11-17",
+        "estadoPre": "Aceptado",
+        "detallePrestamos": [
+            {
+                "idDetallePrestamo": 5,
+                "idManga": [
+                    {
+                        "idManga": 5
+                    }
+                ]
+            },
+            {
+                "idDetallePrestamo": 6,
+                "idManga": [
+                    {
+                        "idManga": 6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idPrestamo": 4,
+        "idSucursal": 4,
+        "idUsuario": 4,
+        "totalMangas": 2,
+        "fechaPres": "2024-11-04",
+        "fechaDevSR": "2024-11-18",
+        "estadoPre": "Aceptado",
+        "detallePrestamos": [
+            {
+                "idDetallePrestamo": 7,
+                "idManga": [
+                    {
+                        "idManga": 7
+                    }
+                ]
+            },
+            {
+                "idDetallePrestamo": 8,
+                "idManga": [
+                    {
+                        "idManga": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idPrestamo": 5,
+        "idSucursal": 5,
+        "idUsuario": 5,
+        "totalMangas": 6,
+        "fechaPres": "2024-11-05",
+        "fechaDevSR": "2024-11-19",
+        "estadoPre": "Aceptado",
+        "detallePrestamos": [
+            {
+                "idDetallePrestamo": 9,
+                "idManga": [
+                    {
+                        "idManga": 9
+                    }
+                ]
+            },
+            {
+                "idDetallePrestamo": 10,
+                "idManga": [
+                    {
+                        "idManga": 10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idPrestamo": 6,
+        "idSucursal": 6,
+        "idUsuario": 6,
+        "totalMangas": 4,
+        "fechaPres": "2024-11-06",
+        "fechaDevSR": "2024-11-20",
+        "estadoPre": "Aceptado"
+    },
+    {
+        "idPrestamo": 7,
+        "idSucursal": 7,
+        "idUsuario": 7,
+        "totalMangas": 8,
+        "fechaPres": "2024-11-07",
+        "fechaDevSR": "2024-11-21",
+        "estadoPre": "Aceptado"
+    },
+    {
+        "idPrestamo": 8,
+        "idSucursal": 8,
+        "idUsuario": 8,
+        "totalMangas": 1,
+        "fechaPres": "2024-11-08",
+        "fechaDevSR": "2024-11-22",
+        "estadoPre": "Aceptado"
+    },
+    {
+        "idPrestamo": 9,
+        "idSucursal": 9,
+        "idUsuario": 9,
+        "totalMangas": 9,
+        "fechaPres": "2024-11-09",
+        "fechaDevSR": "2024-11-23",
+        "estadoPre": "Aceptado"
+    },
+    {
+        "idPrestamo": 10,
+        "idSucursal": 10,
+        "idUsuario": 10,
+        "totalMangas": 10,
+        "fechaPres": "2024-11-10",
+        "fechaDevSR": "2024-11-24",
+        "estadoPre": "Aceptado"
+    }
+]

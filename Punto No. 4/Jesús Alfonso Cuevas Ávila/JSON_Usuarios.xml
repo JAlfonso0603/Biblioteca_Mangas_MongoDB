@@ -1,0 +1,252 @@
+[
+    {
+        "idUsuario": 1,
+        "usuario": "jose.g",
+        "password": "password1",
+        "nombre": [
+            {
+                "nombrePila": "José",
+                "apePat": "González",
+                "apeMat": "Cárdenas"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Empleados",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 1,
+                        "nombrePermiso": "Control total"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 2,
+        "usuario": "andrea.l",
+        "password": "password2",
+        "nombre": [
+            {
+                "nombrePila": "Andrea",
+                "apePat": "Lizbeth",
+                "apeMat": "Coyazo"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Empleados",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 1,
+                        "nombrePermiso": "Control total"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 3,
+        "usuario": "eduardo.g",
+        "password": "password3",
+        "nombre": [
+            {
+                "nombrePila": "Eduardo",
+                "apePat": "González",
+                "apeMat": "Cárdenas"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Empleados",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 1,
+                        "nombrePermiso": "Control total"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 4,
+        "usuario": "juliana.g",
+        "password": "password4",
+        "nombre": [
+            {
+                "nombrePila": "Juliana",
+                "apePat": "González",
+                "apeMat": "Cárdenas"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Empleados",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 1,
+                        "nombrePermiso": "Control total"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 5,
+        "usuario": "camila.g",
+        "password": "password5",
+        "nombre": [
+            {
+                "nombrePila": "Camila",
+                "apePat": "González",
+                "apeMat": "Cárdenas"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Empleados",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 1,
+                        "nombrePermiso": "Control total"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 6,
+        "usuario": "mario.p",
+        "password": "password6",
+        "nombre": [
+            {
+                "nombrePila": "Mario",
+                "apePat": "Pérez",
+                "apeMat": "Fernández"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Clientes",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 2,
+                        "nombrePermiso": "Solo consulta"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 7,
+        "usuario": "lucia.m",
+        "password": "password7",
+        "nombre": [
+            {
+                "nombrePila": "Lucía",
+                "apePat": "Martínez",
+                "apeMat": "Hernández"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Clientes",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 2,
+                        "nombrePermiso": "Solo consulta"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 8,
+        "usuario": "pedro.s",
+        "password": "password8",
+        "nombre": [
+            {
+                "nombrePila": "Pedro",
+                "apePat": "Sánchez",
+                "apeMat": "Lopez"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Clientes",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 2,
+                        "nombrePermiso": "Solo consulta"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 9,
+        "usuario": "isabel.r",
+        "password": "password9",
+        "nombre": [
+            {
+                "nombrePila": "Isabel",
+                "apePat": "Ramírez",
+                "apeMat": "Cruz"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Clientes",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 2,
+                        "nombrePermiso": "Solo consulta"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "idUsuario": 10,
+        "usuario": "juan.t",
+        "password": "password10",
+        "nombre": [
+            {
+                "nombrePila": "Juan",
+                "apePat": "Torres",
+                "apeMat": "Mendoza"
+            }
+        ],
+        "habilitado": 1,
+        "grupo": [
+            {
+                "nombreGrupo": "Clientes",
+                "habilitado": true,
+                "permisos": [
+                    {
+                        "idPermiso": 2,
+                        "nombrePermiso": "Solo consulta"
+                    }
+                ]
+            }
+        ]
+    }
+]
