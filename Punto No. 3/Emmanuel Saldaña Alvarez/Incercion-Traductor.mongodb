@@ -1,0 +1,65 @@
+use("Mangas")
+
+db.traductores.insertMany([
+                {
+                    "idTraductor": 1,
+                    "nombreTrad": "Traductor A",
+                    "idiomas": "Español, Inglés",
+                    "idEditorial": 1
+                },
+                {
+                    "idTraductor": 2,
+                    "nombreTrad": "Traductor B",
+                    "idiomas": "Francés, Alemán",
+                    "idEditorial": 1
+                },
+                {
+                    "idTraductor": 3,
+                    "nombreTrad": "Traductor C",
+                    "idiomas": "Italiano, Portugués",
+                    "idEditorial": 2
+                },
+                {
+                    "idTraductor": 4,
+                    "nombreTrad": "Traductor D",
+                    "idiomas": "Ruso, Chino",
+                    "idEditorial": 2
+                },
+                {
+                    "idTraductor": 5,
+                    "nombreTrad": "Traductor E",
+                    "idiomas": "Japonés, Coreano",
+                    "idEditorial": 3
+                },
+                {
+                    "idTraductor": 6,
+                    "nombreTrad": "Traductor F",
+                    "idiomas": "Árabe, Hindi",
+                    "idEditorial": 3
+                },
+                {
+                    "idTraductor": 7,
+                    "nombreTrad": "Traductor G",
+                    "idiomas": "Holandés, Sueco",
+                    "idEditorial": 4
+                },
+                {
+                    "idTraductor": 8,
+                    "nombreTrad": "Traductor H",
+                    "idiomas": "Turco, Danés",
+                    "idEditorial": 4
+                },
+                {
+                    "idTraductor": 9,
+                    "nombreTrad": "Traductor I",
+                    "idiomas": "Griego, Checo",
+                    "idEditorial": 5
+                },
+                {
+                    "idTraductor": 10,
+                    "nombreTrad": "Traductor J",
+                    "idiomas": "Búlgaro, Húngaro",
+                    "idEditorial": 5
+                }
+        ]   
+)

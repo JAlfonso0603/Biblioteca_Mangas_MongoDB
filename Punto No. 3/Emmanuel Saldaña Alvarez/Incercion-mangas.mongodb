@@ -1,0 +1,466 @@
+use("Mangas")
+
+db.mangas.insertMany([
+    [
+        {
+            "idManga": 1,
+            "idTraductor": 1,
+            "nombreManga": "Manga A",
+            "capituloManga": 5,
+            "paginasManga": 150,
+            "imagenManga": "manga-a.jpg",
+            "stock": 10,
+            "habilitado": true,
+            "disponible": 10,
+            "Genero": [
+                {
+                    "idGenero": 1,
+                    "nombreGen": "Acción",
+                    "descripcionGen": "Género que se caracteriza por la presencia de escenas emocionantes y peligrosas."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 1,
+                    "nombreEdit": "Editorial A",
+                    "paisEdit": "México"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 1
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 1,
+                    "nombreGui": "Guionista 1",
+                    "numeroObrasGui": 5,
+                    "nacionalidadGui": "Mexicana"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 1,
+                    "nombreArt": "Artista 1",
+                    "numeroObrasArt": 10,
+                    "nacionalidadArt": "Mexicana"
+                }
+            ]
+        },
+        {
+            "idManga": 2,
+            "idTraductor": 1,
+            "nombreManga": "Manga B",
+            "capituloManga": 6,
+            "paginasManga": 200,
+            "imagenManga": "manga-b.jpg",
+            "stock": 8,
+            "habilitado": true,
+            "disponible": 8,
+            "Genero": [
+                {
+                    "idGenero": 2,
+                    "nombreGen": "Aventura",
+                    "descripcionGen": "Género que involucra exploración y viajes."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 1,
+                    "nombreEdit": "Editorial A",
+                    "paisEdit": "México"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 2
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 2,
+                    "nombreGui": "Guionista 2",
+                    "numeroObrasGui": 3,
+                    "nacionalidadGui": "Argentina"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 2,
+                    "nombreArt": "Artista 2",
+                    "numeroObrasArt": 5,
+                    "nacionalidadArt": "Argentina"
+                }
+            ]
+        },
+        {
+            "idManga": 3,
+            "idTraductor": 2,
+            "nombreManga": "Manga C",
+            "capituloManga": 10,
+            "paginasManga": 250,
+            "imagenManga": "manga-c.jpg",
+            "stock": 5,
+            "habilitado": true,
+            "disponible": 5,
+            "Genero": [
+                {
+                    "idGenero": 1,
+                    "nombreGen": "Acción",
+                    "descripcionGen": "Género que se caracteriza por la presencia de escenas emocionantes y peligrosas."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 2,
+                    "nombreEdit": "Editorial B",
+                    "paisEdit": "Argentina"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 3
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 3,
+                    "nombreGui": "Guionista 3",
+                    "numeroObrasGui": 7,
+                    "nacionalidadGui": "Española"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 3,
+                    "nombreArt": "Artista 3",
+                    "numeroObrasArt": 12,
+                    "nacionalidadArt": "Española"
+                }
+            ]
+        },
+        {
+            "idManga": 4,
+            "idTraductor": 2,
+            "nombreManga": "Manga D",
+            "capituloManga": 3,
+            "paginasManga": 300,
+            "imagenManga": "manga-d.jpg",
+            "stock": 3,
+            "habilitado": true,
+            "disponible": 3,
+            "Genero": [
+                {
+                    "idGenero": 2,
+                    "nombreGen": "Aventura",
+                    "descripcionGen": "Género que involucra exploración y viajes."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 2,
+                    "nombreEdit": "Editorial B",
+                    "paisEdit": "Argentina"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 4
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 4,
+                    "nombreGui": "Guionista 4",
+                    "numeroObrasGui": 2,
+                    "nacionalidadGui": "Chilena"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 4,
+                    "nombreArt": "Artista 4",
+                    "numeroObrasArt": 8,
+                    "nacionalidadArt": "Chilena"
+                }
+            ]
+        },
+        {
+            "idManga": 5,
+            "idTraductor": 3,
+            "nombreManga": "Manga E",
+            "capituloManga": 8,
+            "paginasManga": 100,
+            "imagenManga": "manga-e.jpg",
+            "stock": 6,
+            "habilitado": true,
+            "disponible": 6,
+            "Genero": [
+                {
+                    "idGenero": 1,
+                    "nombreGen": "Acción",
+                    "descripcionGen": "Género que se caracteriza por la presencia de escenas emocionantes y peligrosas."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 3,
+                    "nombreEdit": "Editorial C",
+                    "paisEdit": "España"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 5
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 5,
+                    "nombreGui": "Guionista 5",
+                    "numeroObrasGui": 4,
+                    "nacionalidadGui": "Colombiana"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 5,
+                    "nombreArt": "Artista 5",
+                    "numeroObrasArt": 6,
+                    "nacionalidadArt": "Colombiana"
+                }
+            ]
+        },
+        {
+            "idManga": 6,
+            "idTraductor": 3,
+            "nombreManga": "Manga F",
+            "capituloManga": 12,
+            "paginasManga": 120,
+            "imagenManga": "manga-f.jpg",
+            "stock": 2,
+            "habilitado": true,
+            "disponible": 2,
+            "Genero": [
+                {
+                    "idGenero": 2,
+                    "nombreGen": "Aventura",
+                    "descripcionGen": "Género que involucra exploración y viajes."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 3,
+                    "nombreEdit": "Editorial C",
+                    "paisEdit": "España"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 6
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 6,
+                    "nombreGui": "Guionista 6",
+                    "numeroObrasGui": 6,
+                    "nacionalidadGui": "Peruana"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 6,
+                    "nombreArt": "Artista 6",
+                    "numeroObrasArt": 9,
+                    "nacionalidadArt": "Peruana"
+                }
+            ]
+        },
+        {
+            "idManga": 7,
+            "idTraductor": 4,
+            "nombreManga": "Manga G",
+            "capituloManga": 4,
+            "paginasManga": 130,
+            "imagenManga": "manga-g.jpg",
+            "stock": 7,
+            "habilitado": true,
+            "disponible": 7,
+            "Genero": [
+                {
+                    "idGenero": 1,
+                    "nombreGen": "Acción",
+                    "descripcionGen": "Género que se caracteriza por la presencia de escenas emocionantes y peligrosas."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 4,
+                    "nombreEdit": "Editorial D",
+                    "paisEdit": "Chile"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 7
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 7,
+                    "nombreGui": "Guionista 7",
+                    "numeroObrasGui": 1,
+                    "nacionalidadGui": "Venezolana"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 7,
+                    "nombreArt": "Artista 7",
+                    "numeroObrasArt": 7,
+                    "nacionalidadArt": "Venezolana"
+                }
+            ]
+        },
+        {
+            "idManga": 8,
+            "idTraductor": 4,
+            "nombreManga": "Manga H",
+            "capituloManga": 9,
+            "paginasManga": 180,
+            "imagenManga": "manga-h.jpg",
+            "stock": 4,
+            "habilitado": true,
+            "disponible": 4,
+            "Genero": [
+                {
+                    "idGenero": 2,
+                    "nombreGen": "Aventura",
+                    "descripcionGen": "Género que involucra exploración y viajes."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 4,
+                    "nombreEdit": "Editorial D",
+                    "paisEdit": "Chile"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 8
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 8,
+                    "nombreGui": "Guionista 8",
+                    "numeroObrasGui": 9,
+                    "nacionalidadGui": "Ecuatoriana"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 8,
+                    "nombreArt": "Artista 8",
+                    "numeroObrasArt": 11,
+                    "nacionalidadArt": "Ecuatoriana"
+                }
+            ]
+        },
+        {
+            "idManga": 9,
+            "idTraductor": 5,
+            "nombreManga": "Manga I",
+            "capituloManga": 11,
+            "paginasManga": 140,
+            "imagenManga": "manga-i.jpg",
+            "stock": 9,
+            "habilitado": true,
+            "disponible": 9,
+            "Genero": [
+                {
+                    "idGenero": 1,
+                    "nombreGen": "Acción",
+                    "descripcionGen": "Género que se caracteriza por la presencia de escenas emocionantes y peligrosas."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 5,
+                    "nombreEdit": "Editorial E",
+                    "paisEdit": "Colombia"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 9
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 9,
+                    "nombreGui": "Guionista 9",
+                    "numeroObrasGui": 8,
+                    "nacionalidadGui": "Uruguaya"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 9,
+                    "nombreArt": "Artista 9",
+                    "numeroObrasArt": 4,
+                    "nacionalidadArt": "Uruguaya"
+                }
+            ]
+        },
+        {
+            "idManga": 10,
+            "idTraductor": 5,
+            "nombreManga": "Manga J",
+            "capituloManga": 7,
+            "paginasManga": 110,
+            "imagenManga": "manga-j.jpg",
+            "stock": 1,
+            "habilitado": true,
+            "disponible": 1,
+            "Genero": [
+                {
+                    "idGenero": 2,
+                    "nombreGen": "Aventura",
+                    "descripcionGen": "Género que involucra exploración y viajes."
+                }
+            ],
+            "Editorial": [
+                {
+                    "idEditorial": 5,
+                    "nombreEdit": "Editorial E",
+                    "paisEdit": "Colombia"
+                }
+            ],
+            "Autor": [
+                {
+                    "idAutor": 10
+                }
+            ],
+            "Guionistas": [
+                {
+                    "idGuionista": 10,
+                    "nombreGui": "Guionista 10",
+                    "numeroObrasGui": 10,
+                    "nacionalidadGui": "Boliviana"
+                }
+            ],
+            "Artistas": [
+                {
+                    "idArtista": 10,
+                    "nombreArt": "Artista 10",
+                    "numeroObrasArt": 15,
+                    "nacionalidadArt": "Boliviana"
+                }
+            ]
+        }
+    ]
+])
