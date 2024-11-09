@@ -1,3 +1,7 @@
+/* En este documento se muestran las consultas necesarias para obtener los datos de las tablas
+   Usuario, Apartados y Préstamos (Tablas embebidas incluidas) en formato JSON para su posterior
+   inserción en la base de datos de MongoDB mediante el uso de .insertMany()*/
+
 SELECT 
     U.idUsuario,
     U.usuario,
