@@ -97,14 +97,6 @@ db.createCollection('mangas', {
                         idAutor: {
                             bsonType: 'int',
                             description: 'ID único del autor'
-                        },
-                        idArtista: {
-                            bsonType: 'int',
-                            description: 'ID del artista asociado'
-                        },
-                        idGuionista: {
-                            bsonType: 'int',
-                            description: 'ID del guionista asociado'
                         }
                     }
                 },
